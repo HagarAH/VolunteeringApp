@@ -31,7 +31,7 @@
             android:layout_marginBottom="22dp"
             android:gravity="center"
             android:keepScreenOn="true"
-            android:text="Şifre Sıfırlama"
+            android:text="Şifre Sıfırlama now "
             android:textColor="?attr/fullscreenTextColor"
             android:textSize="50sp"
             android:textStyle="bold" />
