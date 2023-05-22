@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138621744215",
+    "project_id": "bizden-v1",
+    "storage_bucket": "bizden-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138621744215:android:691e2618cba53d5bcadf12",
+        "android_client_info": {
+          "package_name": "com.mobil.bizden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138621744215-bbvh82b4k1fdvtkha0s0ppchh16o8nnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLSOQIhPBJ6VhQKl6cBsLqEAe4r2gQLu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138621744215-bbvh82b4k1fdvtkha0s0ppchh16o8nnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
