@@ -234,22 +234,41 @@
             android:background="@drawable/rounded_corners_3"
             android:text="Tipi"
             android:textColor="@color/white" />
-<!--        <Spinner-->
-<!--            android:id="@+id/spinnerComboBox"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content" />-->
+        <Spinner
+            android:id="@+id/spinnerComboBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </RelativeLayout>
-    <Button
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:text="Doğrula"
-        android:textColor="@color/white"
-        android:layout_margin="30dp"
-        android:textSize="20sp"
-        android:background="@drawable/rounded_background"
+        android:layout_height="wrap_content">
 
-        />
+        <Button
+            android:id="@+id/verifyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Doğrula"
+            android:textColor="@color/white"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_background"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/progressbarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="39dp"
+            android:layout_toEndOf="@+id/verifyBtn"
+            android:outlineSpotShadowColor="@color/primary_100" />
+
+    </RelativeLayout>
+
 
 
 </LinearLayout>

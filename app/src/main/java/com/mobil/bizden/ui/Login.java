@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity {
      UserController.LoginCallback loginCallback = new UserController.LoginCallback() {
          @Override
          public void onSuccess() {
+
              Intent intent = new Intent(Login.this, Home.class);
              startActivity(intent);
              finish();
