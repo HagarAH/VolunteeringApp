@@ -17,8 +17,6 @@ import com.mobil.bizden.models.Profile;
 import com.mobil.bizden.models.User;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class UserController {
     private FirebaseAuth mAuth;
@@ -84,7 +82,7 @@ public class UserController {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            callback.onSuccess();
+                            callback.onSuccess(mAuth.getCurrentUser());
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -96,7 +94,7 @@ public class UserController {
 
     // Define a callback interface
    public  interface LoginCallback {
-        void onSuccess();
+        void onSuccess(FirebaseUser userid);
         void onFailure(Exception exception);
 
     }

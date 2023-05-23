@@ -18,13 +18,26 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="13dp"
         android:layout_marginLeft="12dp"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+
         android:text="Profilinizi Güncelleyin"
         android:textColor="@color/primary_100" />
     <View
-        android:layout_width="350dp"
-        android:layout_height="5dp"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
         android:background="@color/primary_100" />
+    <TextView
+        android:id="@+id/updateProfileTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="13dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-smallcaps"
+
+        android:text="Kimliğinizde olduğu gibi doldurunuz"
+        android:textColor="@color/mavi" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -213,31 +226,36 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_below="@id/textViewDateOfBirth"
-            android:layout_marginStart="-63dp"
-            android:layout_marginTop="-12dp"
-            android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@id/editTextDateOfBirth"
+            android:layout_alignTop="@id/editTextDateOfBirth"
+            android:layout_alignEnd="@id/editTextDateOfBirth"
             android:background="@drawable/rounded_corners_3"
-            android:text="Date"
+            android:text="📅"
+            android:textSize="20sp"
             android:textColor="@color/white" />
 
-        <EditText
+        <Button
             android:id="@+id/IdComboBox"
             android:layout_width="90.5dp"
             android:layout_height="60dp"
             android:layout_below="@id/textViewID"
-            android:layout_marginStart="-100.5dp"
-            android:layout_marginTop="-14dp"
-            android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@id/editTextID"
-           android:textAlignment="center"
-            android:background="@drawable/rounded_background"
-            android:text="Tipi"
-            android:textColor="@color/white" />
+            android:layout_alignTop="@id/editTextID"
+            android:layout_alignEnd="@id/editTextID"
+            android:textAlignment="center"
+            android:text="▼"
+            android:textColor="@color/mavi"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corners_3"
+           />
         <Spinner
             android:id="@+id/spinnerComboBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_below="@id/textViewID"
+            android:layout_alignLeft="@id/IdComboBox"
+            android:layout_alignTop="@id/IdComboBox"
+            />
 
     </RelativeLayout>
     <RelativeLayout

@@ -1,10 +1,11 @@
 package com.mobil.bizden.controllers;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.mobil.bizden.models.Profile;
 
 public class ProfileController {
     private FirebaseAuth mAuth;
@@ -49,6 +50,39 @@ public class ProfileController {
         } else {
             // Profile is not complete, handle the error or show a message to the user
         }
+    }
+    public interface ProfileCheckCallback {
+        void onProfileExists(Profile profile);
+        void onProfileEmpty();
+        void onProfileCheckError(Exception e);
+    }
+
+    public void checkDocument(String userId, ProfileCheckCallback callback) {
+        DocumentReference profileRef = mFirestore.collection("profiles").document(userId);
+
+        profileRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                    Profile profile = document.toObject(Profile.class);
+                    if (profile != null) {
+                        if (profile.getFirstName() != null && !profile.getFirstName().isEmpty()
+                                && profile.getLastName() != null && !profile.getLastName().isEmpty()
+                                && profile.getTelephone() != null && !profile.getTelephone().isEmpty()
+                                && profile.getTcId() != null && !profile.getTcId().isEmpty()
+                                && profile.getBirthDate() != null) {
+                            callback.onProfileExists(profile);
+                        } else {
+                            callback.onProfileEmpty();
+                        }
+                    }
+                } else {
+                    callback.onProfileEmpty();
+                }
+            } else {
+                callback.onProfileCheckError(task.getException());
+            }
+        });
     }
 
 

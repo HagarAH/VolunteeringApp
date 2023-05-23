@@ -16,8 +16,10 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.databinding.ActivityMainBinding;
+import com.mobil.bizden.models.Profile;
 
 public class Login extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -33,13 +35,37 @@ public class Login extends AppCompatActivity {
 
     UserController userController= new UserController();
 
-     UserController.LoginCallback loginCallback = new UserController.LoginCallback() {
-         @Override
-         public void onSuccess() {
 
-             Intent intent = new Intent(Login.this, Home.class);
-             startActivity(intent);
-             finish();
+    ProfileController profileController=new ProfileController();
+
+    ProfileController.ProfileCheckCallback checkCallback=new ProfileController.ProfileCheckCallback() {
+
+        @Override
+        public void onProfileExists(Profile profile) {
+            Intent intent = new Intent(Login.this, Home.class);
+            startActivity(intent);
+            finish();
+        }
+
+        @Override
+        public void onProfileEmpty() {
+            Intent intent = new Intent(Login.this, UpdateProfile.class);
+            startActivity(intent);
+            finish();
+        }
+
+        @Override
+        public void onProfileCheckError(Exception e) {
+            System.out.println(e);
+        }
+    };
+
+     UserController.LoginCallback loginCallback = new UserController.LoginCallback() {
+
+
+         @Override
+         public void onSuccess(FirebaseUser userid) {
+             profileController.checkDocument(userid.getUid(),checkCallback);
          }
 
          @Override

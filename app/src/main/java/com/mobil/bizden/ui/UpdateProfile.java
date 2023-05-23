@@ -25,8 +25,9 @@ public class UpdateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
         Spinner spinnerComboBox = findViewById(R.id.spinnerComboBox);
-        EditText editTextComboBox = findViewById(R.id.IdComboBox);
+        Button editTextComboBox = findViewById(R.id.IdComboBox);
         ProgressBar progressBar= findViewById(R.id.progressbarId);
+        EditText dateEditText= findViewById(R.id.editTextDateOfBirth);
         // Create an ArrayAdapter with the options
         String[] optionsArray= new String[2];
         datePickerButton = findViewById(R.id.datePickerButton);
@@ -78,15 +79,13 @@ public class UpdateProfile extends AppCompatActivity {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-
+        EditText datePickerEdit = findViewById(R.id.editTextDateOfBirth);
         // Create a new instance of DatePickerDialog and show it
         DatePickerDialog datePickerDialog = new DatePickerDialog(UpdateProfile.this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        // Handle the selected date
-                        // Here, you can update the selected date to your EditText or perform any other action
-                    }
+                        datePickerEdit.setText(dayOfMonth+"/"+month+"/"+year);}
                 }, year, month, dayOfMonth);
 
         datePickerDialog.show();
@@ -94,12 +93,4 @@ public class UpdateProfile extends AppCompatActivity {
 
     }
 
-    public static class kullaniciprofil extends AppCompatActivity {
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_kullaniciprofil);
-        }
-    }
 }
