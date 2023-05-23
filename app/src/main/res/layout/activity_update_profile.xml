@@ -213,8 +213,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_below="@id/textViewDateOfBirth"
-            android:layout_marginStart="-62.3dp"
-            android:layout_marginTop="-14dp"
+            android:layout_marginStart="-63dp"
+            android:layout_marginTop="-12dp"
             android:layout_marginBottom="16dp"
             android:layout_toEndOf="@id/editTextDateOfBirth"
             android:background="@drawable/rounded_corners_3"
@@ -231,7 +231,7 @@
             android:layout_marginBottom="16dp"
             android:layout_toEndOf="@id/editTextID"
            android:textAlignment="center"
-            android:background="@drawable/rounded_corners_3"
+            android:background="@drawable/rounded_background"
             android:text="Tipi"
             android:textColor="@color/white" />
 <!--        <Spinner-->
