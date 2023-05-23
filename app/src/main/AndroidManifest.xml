@@ -12,14 +12,14 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateProfile"
+            android:exported="false" />
+        <activity
             android:name=".ui.Home"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
-
             android:theme="@style/Theme.Bizden.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.Login"
-            android:exported="true">
-
-        </activity>
-
-
+            android:exported="true"></activity>
     </application>
 
 </manifest>

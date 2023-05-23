@@ -17,22 +17,26 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.databinding.ActivityMainBinding;
 
 public class Register extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FirebaseAuth mAuth;
 
+    UserController userController= new UserController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         setContentView(R.layout.activity_register);
         EditText passwordE = findViewById(R.id.passwordEditText);
@@ -50,6 +54,20 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        UserController.RegistrationCallback registrationCallback= new UserController.RegistrationCallback() {
+            @Override
+            public void onRegistrationSuccess(FirebaseUser user) {
+                Toast.makeText(Register.this,"Hesap Oluşturuldu. Lütfen giriş yap",Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onRegistrationFailure(String errorMessage) {
+
+                Toast.makeText(Register.this, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
 // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -70,27 +88,7 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this,"Lütfen şifre tekrarını giriniz.",Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Toast.makeText(Register.this,"Hesap Oluşturuldu. Lütfen giriş yap",Toast.LENGTH_SHORT).show();
-
-
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(Register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-
-                                }
-                            }
-                        });
-
+                userController.registerUser(email.trim(),password, registrationCallback);
 
 
 

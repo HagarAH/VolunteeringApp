@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UpdateProfile">
+<LinearLayout
+    android:id="@+id/updateProflayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/updateProfileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="13dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="30sp"
+        android:text="Profilinizi Güncelleyin"
+        android:textColor="@color/primary_100" />
+    <View
+        android:layout_width="350dp"
+        android:layout_height="5dp"
+        android:background="@color/primary_100" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp">
+
+
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Adınızı giriniz"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="2dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+        <TextView
+            android:id="@+id/textViewFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/editTextFirstName"
+            android:layout_alignTop="@id/editTextFirstName"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:text="Adınız"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextFirstName"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Soyadınızı girin"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/editTextLastName"
+            android:layout_alignTop="@id/editTextLastName"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Soyadınız"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/editTextDateOfBirth"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextLastName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Doğum tarihinizi seçin"
+            android:inputType="date"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewDateOfBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextLastName"
+            android:layout_alignStart="@id/editTextDateOfBirth"
+            android:layout_alignTop="@id/editTextDateOfBirth"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Doğum Tarihi"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/editTextID"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextDateOfBirth"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="11 haneli kimlik numaranızı giriniz"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+
+        <TextView
+            android:id="@+id/textViewID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextDateOfBirth"
+            android:layout_alignStart="@id/editTextID"
+            android:layout_alignTop="@id/editTextID"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Kimlik Numarası"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/editTextTelephoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextID"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Telefon numaranızı giriniz"
+            android:inputType="phone"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewTelephoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/editTextTelephoneNumber"
+            android:layout_alignTop="@id/editTextTelephoneNumber"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Telefon Numarası"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/textViewDateOfBirth"
+            android:layout_marginStart="-62.3dp"
+            android:layout_marginTop="-14dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/editTextDateOfBirth"
+            android:background="@drawable/rounded_corners_3"
+            android:text="Date"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/IdComboBox"
+            android:layout_width="90.5dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/textViewID"
+            android:layout_marginStart="-100.5dp"
+            android:layout_marginTop="-14dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/editTextID"
+           android:textAlignment="center"
+            android:background="@drawable/rounded_corners_3"
+            android:text="Tipi"
+            android:textColor="@color/white" />
+<!--        <Spinner-->
+<!--            android:id="@+id/spinnerComboBox"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Doğrula"
+        android:textColor="@color/white"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_background"
+
+        />
+
+
+</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
