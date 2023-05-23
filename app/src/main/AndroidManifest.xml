@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.kullaniciprofil"
+            android:name=".ui.userprofil"
             android:exported="false" />
         <activity
             android:name=".ui.UpdateProfile"
