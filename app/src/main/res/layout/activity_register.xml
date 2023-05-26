@@ -8,16 +8,17 @@
     tools:context=".ui.Register">
 
     <ImageView
+
         android:id="@+id/logoImageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="321dp"
+        android:layout_height="158dp"
         android:src="@drawable/bizdenlogo"
         app:layout_constraintBottom_toTopOf="@+id/logoLayout"
         app:layout_constraintDimensionRatio="2:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40sp"/>
 
     <LinearLayout
         android:id="@+id/logoLayout"
