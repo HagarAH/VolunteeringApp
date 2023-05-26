@@ -124,8 +124,10 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-
             android:layout_marginBottom="16dp"
+            android:enabled="false"
+            android:focusable="false"
+            android:clickable="false"
             android:background="@drawable/rounded_background"
             android:hint="Doğum tarihinizi seçin"
             android:inputType="date"
@@ -162,7 +164,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_background"
-            android:hint="11 haneli kimlik numaranızı giriniz"
+            android:hint="Yandan kimlk tipi seçiniz"
             android:inputType="number"
             android:maxLength="11"
             android:paddingLeft="20dp"
@@ -187,39 +189,49 @@
             android:textColor="@color/primary_100"
             android:textSize="15sp" />
 
+<!--       -->
+<!--        -->
+<!--        <EditText-->
+<!--            android:id="@+id/editTextTelephoneNumber"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_below="@id/editTextID"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/rounded_background"-->
+<!--            android:hint="-&#45;&#45; -&#45;&#45; &#45;&#45; &#45;&#45;"-->
+<!--            android:inputType="phone"-->
+<!--            android:paddingLeft="58dp"-->
+<!--            android:paddingTop="2dp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textColorHint="#999999" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/phonePrefix"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="+90"-->
+<!--            android:textSize="17sp"-->
+<!--            android:paddingLeft="18dp"-->
+<!--            android:layout_alignBaseline="@+id/editTextTelephoneNumber"-->
+<!--            android:layout_alignStart="@id/editTextTelephoneNumber"/>-->
 
-        <EditText
-            android:id="@+id/editTextTelephoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/editTextID"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_background"
-            android:hint="Telefon numaranızı giriniz"
-            android:inputType="phone"
-            android:paddingLeft="20dp"
-            android:paddingTop="2dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="#999999" />
-
-        <TextView
-            android:id="@+id/textViewTelephoneNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/editTextTelephoneNumber"
-            android:layout_alignTop="@id/editTextTelephoneNumber"
-            android:layout_marginStart="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="-16dp"
-            android:background="@android:color/white"
-            android:padding="4dp"
-            android:text="Telefon Numarası"
-            android:textColor="@color/primary_100"
-            android:textSize="15sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/textViewTelephoneNumber"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignStart="@id/editTextTelephoneNumber"-->
+<!--            android:layout_alignTop="@id/editTextTelephoneNumber"-->
+<!--            android:layout_marginStart="22dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="-16dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="Telefon Numarası"-->
+<!--            android:textColor="@color/primary_100"-->
+<!--            android:textSize="15sp" />-->
 
         <Button
             android:id="@+id/datePickerButton"

@@ -7,6 +7,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mobil.bizden.models.Profile;
 
+import java.util.Date;
+
 public class ProfileController {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -18,39 +20,50 @@ public class ProfileController {
         mCurrentUser = mAuth.getCurrentUser();
     }
 
-    public void updateProfile(String displayName, String email) {
-        if (isProfileComplete(displayName, email)) {
-            // Proceed with profile update
-            if (mCurrentUser != null) {
-                // Update user profile in Firebase Authentication
-                mCurrentUser.updateProfile(new UserProfileChangeRequest.Builder()
-                                .setDisplayName(displayName)
-                                .build())
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                // Profile updated successfully in Firebase Authentication
-                                // Now update the user's document in Firestore
-                                DocumentReference userRef = mFirestore.collection("users")
-                                        .document(mCurrentUser.getUid());
+    public void updateProfile(String fname, String lname, String idno, String dateOfBirth, ProfileUpdateCallback callback) {
+        if (mCurrentUser != null) {
+            // Update user profile in Firebase Authentication
+            mCurrentUser.updateProfile(new UserProfileChangeRequest.Builder()
+                            .setDisplayName(fname)
+                            .build())
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            // Profile updated successfully in Firebase Authentication
+                            // Now update the user's document in Firestore
+                            DocumentReference userRef = mFirestore.collection("users")
+                                    .document(mCurrentUser.getUid());
 
-                                userRef.update("displayName", displayName, "email", email)
-                                        .addOnCompleteListener(task1 -> {
-                                            if (task1.isSuccessful()) {
-                                                // User document updated successfully in Firestore
-                                                // Do any additional operations if needed
-                                            } else {
-                                                // Failed to update user document in Firestore
-                                            }
-                                        });
-                            } else {
-                                // Failed to update user profile in Firebase Authentication
-                            }
-                        });
-            }
-        } else {
-            // Profile is not complete, handle the error or show a message to the user
+                            // Create a Profile object
+                            Profile profile = new Profile(mCurrentUser.getUid(), fname, lname, "", idno, dateOfBirth);
+
+                            // Save the profile document in Firestore
+                            userRef.set(profile)
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            // Profile document created successfully in Firestore
+                                            // Invoke the success callback
+                                            callback.onProfileUpdateSuccess();
+                                        } else {
+                                            // Failed to create profile document in Firestore
+                                            // Invoke the error callback
+                                            callback.onProfileUpdateFailure();
+                                        }
+                                    });
+                        } else {
+                            // Failed to update user profile in Firebase Authentication
+                            // Invoke the error callback
+                            callback.onProfileUpdateFailure();
+                        }
+                    });
         }
     }
+
+    public interface ProfileUpdateCallback {
+        void onProfileUpdateSuccess();
+        void onProfileUpdateFailure();
+    }
+
+
     public interface ProfileCheckCallback {
         void onProfileExists(Profile profile);
         void onProfileEmpty();
