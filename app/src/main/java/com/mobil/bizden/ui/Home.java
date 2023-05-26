@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,11 +20,42 @@ public class Home extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseUser user;
     DrawerLayout drawerLayout;
+    private ImageView imageView;
+
+    private TextView textViewprofil;
+    private ImageView imageViewbarinak;
+
     private NavigationView  navigationDrawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        imageViewbarinak = findViewById(R.id.imageViewbarinak);
+        imageViewbarinak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, kod.class);
+                startActivity(intent);
+            }
+        });
+
+        textViewprofil= findViewById(R.id.textViewprofil);
+        textViewprofil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, userprofile.class);
+                startActivity(intent);
+            }
+        });
+        imageView=findViewById(R.id.imageViewprofil);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, userprofile.class);
+                startActivity(intent);
+            }
+        });
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationDrawer = findViewById(R.id.navigation_drawer);
@@ -53,12 +86,15 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), userprofile.class);
+                Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+
     }
+
 
     public void onToggleClick(View view) {
         drawerLayout = findViewById(R.id.drawer_layout);

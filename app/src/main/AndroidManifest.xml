@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31">
         <activity
-            android:name=".kod"
+            android:name=".ui.kod"
             android:exported="false" />
         <activity
             android:name=".ui.userprofile"
