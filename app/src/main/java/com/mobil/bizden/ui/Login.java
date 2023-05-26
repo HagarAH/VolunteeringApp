@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
 
         @Override
         public void onProfileEmpty() {
-            Intent intent = new Intent(Login.this, UpdateProfile.class);
+            Intent intent = new Intent(Login.this, Identification.class);
             startActivity(intent);
             finish();
         }

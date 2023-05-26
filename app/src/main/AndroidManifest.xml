@@ -12,13 +12,16 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31">
         <activity
+            android:name=".PhoneVerify"
+            android:exported="false" />
+        <activity
             android:name=".ui.kod"
             android:exported="false" />
         <activity
             android:name=".ui.userprofile"
             android:exported="false" />
         <activity
-            android:name=".ui.UpdateProfile"
+            android:name=".ui.Identification"
             android:exported="false" />
         <activity
             android:name=".ui.Home"
