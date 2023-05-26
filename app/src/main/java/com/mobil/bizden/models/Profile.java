@@ -7,13 +7,13 @@ public class Profile {
     private String lastName;
     private String telephone;
     private String tcId;
-    private Date birthDate;
+    private String birthDate;
 
     public Profile() {
         // Default constructor required for Firestore
     }
 
-    public Profile(String uid, String firstName, String lastName, String telephone, String tcId, Date birthDate) {
+    public Profile(String uid, String firstName, String lastName, String telephone, String tcId, String birthDate) {
         this.uid = uid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -62,11 +62,11 @@ public class Profile {
         this.tcId = tcId;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 }

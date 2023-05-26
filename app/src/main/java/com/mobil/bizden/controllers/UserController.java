@@ -42,7 +42,7 @@ public class UserController {
                                     // User added to 'users' collection successfully
 
                                     // Add UID to the 'profiles' collection
-                                    Profile profileModel = new Profile(uid,"","","","",new Date());
+                                    Profile profileModel = new Profile(uid,"","","","","");
 
                                     FirebaseFirestore.getInstance().collection("profiles").document(uid)
                                             .set(profileModel)

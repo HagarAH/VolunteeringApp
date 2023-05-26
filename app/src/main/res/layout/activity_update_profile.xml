@@ -5,298 +5,303 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.UpdateProfile">
+<LinearLayout
+    android:id="@+id/updateProflayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/updateProfileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="13dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
 
-    <LinearLayout
-        android:id="@+id/updateProflayout"
-        android:layout_width="412dp"
-        android:layout_height="725dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:text="Profilinizi Güncelleyin"
+        android:textColor="@color/primary_100" />
+    <View
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:background="@color/primary_100" />
+    <TextView
+        android:id="@+id/updateProfileTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="13dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-smallcaps"
 
+        android:text="Kimliğinizde olduğu gibi doldurunuz"
+        android:textColor="@color/mavi" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp">
+
+
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Adınızı giriniz"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="2dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
         <TextView
-            android:id="@+id/updateProfileText"
+            android:id="@+id/textViewFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="13dp"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Profilinizi Güncelleyin"
-
+            android:layout_alignStart="@id/editTextFirstName"
+            android:layout_alignTop="@id/editTextFirstName"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:text="Adınız"
             android:textColor="@color/primary_100"
-            android:textSize="20sp" />
-
-        <View
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/primary_100" />
-
-        <TextView
-            android:id="@+id/updateProfileTip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="13dp"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Kimliğinizde olduğu gibi doldurunuz"
-
-            android:textColor="@color/mavi"
             android:textSize="15sp" />
 
-        <RelativeLayout
+
+        <EditText
+            android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp">
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextFirstName"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Soyadınızı girin"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
 
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
 
-            <EditText
-                android:id="@+id/editTextFirstName"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_background"
-                android:hint="Adınızı giriniz"
-                android:inputType="text"
-                android:paddingLeft="15dp"
-                android:paddingTop="2dp"
-                android:paddingRight="15dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:id="@+id/textViewFirstName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/editTextFirstName"
-                android:layout_alignTop="@id/editTextFirstName"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-16dp"
-                android:layout_marginBottom="8dp"
-                android:background="@android:color/white"
-                android:padding="4dp"
-                android:text="Adınız"
-                android:textColor="@color/primary_100"
-                android:textSize="15sp" />
-
-
-            <EditText
-                android:id="@+id/editTextLastName"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@id/editTextFirstName"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_background"
-                android:hint="Soyadınızı girin"
-                android:inputType="text"
-                android:paddingLeft="20dp"
-                android:paddingTop="2dp"
-
-                android:textColor="@android:color/black"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:id="@+id/textViewLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/editTextLastName"
-                android:layout_alignTop="@id/editTextLastName"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-16dp"
-                android:background="@android:color/white"
-                android:padding="4dp"
-                android:text="Soyadınız"
-                android:textColor="@color/primary_100"
-                android:textSize="15sp" />
-
-
-            <EditText
-                android:id="@+id/editTextDateOfBirth"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/editTextLastName"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_background"
-                android:hint="Doğum tarihinizi seçin"
-                android:inputType="date"
-                android:paddingLeft="20dp"
-                android:paddingTop="2dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:id="@+id/textViewDateOfBirth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextLastName"
-                android:layout_alignStart="@id/editTextDateOfBirth"
-                android:layout_alignTop="@id/editTextDateOfBirth"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-16dp"
-                android:background="@android:color/white"
-                android:padding="4dp"
-                android:text="Doğum Tarihi"
-                android:textColor="@color/primary_100"
-                android:textSize="15sp" />
-
-
-            <EditText
-                android:id="@+id/editTextID"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@id/editTextDateOfBirth"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_background"
-                android:hint="11 haneli kimlik numaranızı giriniz"
-                android:inputType="number"
-                android:maxLength="11"
-                android:paddingLeft="20dp"
-                android:paddingTop="2dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="#999999" />
-
-
-            <TextView
-                android:id="@+id/textViewID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextDateOfBirth"
-                android:layout_alignStart="@id/editTextID"
-                android:layout_alignTop="@id/editTextID"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-16dp"
-                android:background="@android:color/white"
-                android:padding="4dp"
-                android:text="Kimlik Numarası"
-                android:textColor="@color/primary_100"
-                android:textSize="15sp" />
-
-
-            <EditText
-                android:id="@+id/editTextTelephoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@id/editTextID"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_background"
-                android:hint="Telefon numaranızı giriniz"
-                android:inputType="phone"
-                android:paddingLeft="20dp"
-                android:paddingTop="2dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="#999999" />
-
-            <TextView
-                android:id="@+id/textViewTelephoneNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/editTextTelephoneNumber"
-                android:layout_alignTop="@id/editTextTelephoneNumber"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-16dp"
-                android:background="@android:color/white"
-                android:padding="4dp"
-                android:text="Telefon Numarası"
-                android:textColor="@color/primary_100"
-                android:textSize="15sp" />
-
-
-            <Button
-                android:id="@+id/datePickerButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/textViewDateOfBirth"
-                android:layout_alignTop="@id/editTextDateOfBirth"
-                android:layout_alignEnd="@id/editTextDateOfBirth"
-                android:background="@drawable/rounded_corners_3"
-                android:text="📅"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/IdComboBox"
-                android:layout_width="90.5dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/textViewID"
-                android:layout_alignTop="@id/editTextID"
-                android:layout_alignEnd="@id/editTextID"
-                android:background="@drawable/rounded_corners_3"
-                android:text="▼"
-                android:textAlignment="center"
-                android:textColor="@color/mavi"
-                android:textSize="20sp" />
-
-            <Spinner
-                android:id="@+id/spinnerComboBox"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/textViewID"
-                android:layout_alignLeft="@id/IdComboBox"
-                android:layout_alignTop="@id/IdComboBox"
-                android:layout_marginLeft="10dp"
-                android:outlineSpotShadowColor="@color/white" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_marginTop="0dp"
+        <TextView
+            android:id="@+id/textViewLastName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/verifyBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="30dp"
-
-                android:background="@drawable/rounded_background"
-                android:text="Doğrula"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <ProgressBar
-                android:id="@+id/progressbarId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="39dp"
-                android:layout_toEndOf="@+id/verifyBtn"
-                android:outlineSpotShadowColor="@color/primary_100" />
-
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/editTextLastName"
+            android:layout_alignTop="@id/editTextLastName"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Soyadınız"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
 
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/editTextDateOfBirth"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextLastName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:enabled="false"
+            android:focusable="false"
+            android:clickable="false"
+            android:background="@drawable/rounded_background"
+            android:hint="Doğum tarihinizi seçin"
+            android:inputType="date"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewDateOfBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextLastName"
+            android:layout_alignStart="@id/editTextDateOfBirth"
+            android:layout_alignTop="@id/editTextDateOfBirth"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Doğum Tarihi"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/editTextID"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editTextDateOfBirth"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Yandan kimlk tipi seçiniz"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="20dp"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+
+        <TextView
+            android:id="@+id/textViewID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextDateOfBirth"
+            android:layout_alignStart="@id/editTextID"
+            android:layout_alignTop="@id/editTextID"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Kimlik Numarası"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+<!--       -->
+<!--        -->
+<!--        <EditText-->
+<!--            android:id="@+id/editTextTelephoneNumber"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_below="@id/editTextID"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/rounded_background"-->
+<!--            android:hint="-&#45;&#45; -&#45;&#45; &#45;&#45; &#45;&#45;"-->
+<!--            android:inputType="phone"-->
+<!--            android:paddingLeft="58dp"-->
+<!--            android:paddingTop="2dp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textColorHint="#999999" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/phonePrefix"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="+90"-->
+<!--            android:textSize="17sp"-->
+<!--            android:paddingLeft="18dp"-->
+<!--            android:layout_alignBaseline="@+id/editTextTelephoneNumber"-->
+<!--            android:layout_alignStart="@id/editTextTelephoneNumber"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textViewTelephoneNumber"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignStart="@id/editTextTelephoneNumber"-->
+<!--            android:layout_alignTop="@id/editTextTelephoneNumber"-->
+<!--            android:layout_marginStart="22dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="-16dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="Telefon Numarası"-->
+<!--            android:textColor="@color/primary_100"-->
+<!--            android:textSize="15sp" />-->
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/textViewDateOfBirth"
+            android:layout_alignTop="@id/editTextDateOfBirth"
+            android:layout_alignEnd="@id/editTextDateOfBirth"
+            android:background="@drawable/rounded_corners_3"
+            android:text="📅"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/IdComboBox"
+            android:layout_width="90.5dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/textViewID"
+            android:layout_alignTop="@id/editTextID"
+            android:layout_alignEnd="@id/editTextID"
+            android:textAlignment="center"
+            android:text="▼"
+            android:textColor="@color/mavi"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corners_3"
+           />
+        <Spinner
+            android:id="@+id/spinnerComboBox"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_below="@id/textViewID"
+            android:layout_alignLeft="@id/IdComboBox"
+            android:layout_alignTop="@id/IdComboBox"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/verifyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Doğrula"
+            android:textColor="@color/white"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_background"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/progressbarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="39dp"
+            android:layout_toEndOf="@+id/verifyBtn"
+            android:outlineSpotShadowColor="@color/primary_100" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
