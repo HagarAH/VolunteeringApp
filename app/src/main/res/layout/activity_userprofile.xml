@@ -215,13 +215,95 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="29dp"
         android:background="@color/primary_100"
         android:orientation="horizontal"
 
         >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageViewsettings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/settings"
 
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ayarlar"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:layout_marginLeft="30dp"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:src="@drawable/homeicon"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Ana Sayfa"
+                android:textColor="@color/white"
+                android:layout_marginLeft="40dp">
+                
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@android:drawable/stat_sys_phone_call"
+></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ara"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="55dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fui_ic_anonymous_white_24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profilim"
+                android:textColor="@color/white"
+                android:layout_marginLeft="47dp"></TextView>
+
+        </LinearLayout>
     </LinearLayout>
 
 
