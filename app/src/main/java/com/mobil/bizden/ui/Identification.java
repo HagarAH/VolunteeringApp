@@ -25,7 +25,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UpdateProfile extends AppCompatActivity {
+public class Identification extends AppCompatActivity {
 
     private Button datePickerButton;
     private String year_;
@@ -63,7 +63,7 @@ public class UpdateProfile extends AppCompatActivity {
                 // Update the EditText with the selected option
                 String selectedOption = parent.getItemAtPosition(position).toString();
                 idBtn.setText(selectedOption);
-                editTextID.setText("11 haneli kimlik numaranızı giriniz");
+                editTextID.setHint("11 haneli kimlik numaranızı giriniz");
             }
 
             @Override
@@ -100,7 +100,22 @@ public class UpdateProfile extends AppCompatActivity {
             }
         });
         ProfileController profileController= new ProfileController();
+        ProfileController.ProfileUpdateCallback profileUpdateCallback= new ProfileController.ProfileUpdateCallback() {
+            @Override
+            public void onProfileUpdateSuccess() {
+                Toast.makeText(Identification.this, "Kimliğinizi doğrulandı ve kaydedildi",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Identification.this, Home.class);
+                startActivity(intent);
+                finish();
+            }
 
+            @Override
+            public void onProfileUpdateFailure() {
+                Toast.makeText(Identification.this, "Kimliğinizi doğrulandı ama kaydedilemedi",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
 
         verifyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,29 +149,17 @@ public class UpdateProfile extends AppCompatActivity {
                                     System.out.println(verificationResult);
 
                                     progressBar.setVisibility(View.GONE);
-                                    if(verificationResult=="true"){
-                                        ProfileController.ProfileUpdateCallback profileUpdateCallback= new ProfileController.ProfileUpdateCallback() {
-                                            @Override
-                                            public void onProfileUpdateSuccess() {
-                                                Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulandı ve kaydedildi",
-                                                        Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(UpdateProfile.this, Home.class);
-                                                startActivity(intent);
-                                                finish();
-                                            }
+                                    if(verificationResult.toString().equalsIgnoreCase("true")){
 
-                                            @Override
-                                            public void onProfileUpdateFailure() {
-                                                Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulandı ama kaydedilemedi",
-                                                        Toast.LENGTH_SHORT).show();
-                                            }
-                                        };
                                         profileController.updateProfile(fName,lName,ID,editTextDateOfBirth.getText().toString(),profileUpdateCallback );
 
                                     }
-                                    else{
-                                        Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulanamadı, lütfen bilgilerinizi kontrol edin",
+                                    else if(verificationResult.equalsIgnoreCase("false")){
+                                        Toast.makeText(Identification.this, "Kimliğinizi doğrulanamadı, lütfen bilgilerinizi kontrol edin",
                                                 Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        System.out.println(verificationResult);
                                     }
                                 }
 
@@ -175,46 +178,27 @@ public class UpdateProfile extends AppCompatActivity {
                             ForeignIdVerification.VerificationListener verificationListener = new ForeignIdVerification.VerificationListener() {
                                 @Override
                                 public void onVerificationCompleted(String verificationResult) {
-                                    // Handle the successful verification result
                                     System.out.println(verificationResult);
+
                                     progressBar.setVisibility(View.GONE);
-                                    if(verificationResult=="true"){
-                                        if(verificationResult=="true"){
-                                            ProfileController.ProfileUpdateCallback profileUpdateCallback= new ProfileController.ProfileUpdateCallback() {
-                                                @Override
-                                                public void onProfileUpdateSuccess() {
-                                                    Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulandı ve kaydedildi",
-                                                            Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(UpdateProfile.this, Home.class);
-                                                    startActivity(intent);
-                                                    finish();
-                                                }
+                                    if(verificationResult.toString().equalsIgnoreCase("true")){
 
-                                                @Override
-                                                public void onProfileUpdateFailure() {
-                                                    Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulandı ama kaydedilemedi",
-                                                            Toast.LENGTH_SHORT).show();
-                                                }
-                                            };
-                                            profileController.updateProfile(fName,lName,ID,editTextDateOfBirth.getText().toString(),profileUpdateCallback );
-
-                                        }
-                                        else{
-                                            Toast.makeText(UpdateProfile.this, "Kimliğinizi doğrulanamadı, lütfen bilgilerinizi kontrol edin",
-                                                    Toast.LENGTH_SHORT).show();
-
-                                        }
+                                        profileController.updateProfile(fName,lName,ID,editTextDateOfBirth.getText().toString(),profileUpdateCallback );
 
                                     }
-                                    else{
-
+                                    else if(verificationResult.equalsIgnoreCase("false")){
+                                        Toast.makeText(Identification.this, "Kimliğinizi doğrulanamadı, lütfen bilgilerinizi kontrol edin",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        System.out.println(verificationResult);
                                     }
                                 }
 
                                 @Override
                                 public void onVerificationFailed() {
                                     // Handle the failed verification
-                                    System.out.println("Not verified");
+
                                     progressBar.setVisibility(View.GONE);
                                 }
                             };
@@ -263,7 +247,7 @@ public class UpdateProfile extends AppCompatActivity {
         int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
         EditText datePickerEdit = findViewById(R.id.editTextDateOfBirth);
         // Create a new instance of DatePickerDialog and show it
-        DatePickerDialog datePickerDialog = new DatePickerDialog(UpdateProfile.this,
+        DatePickerDialog datePickerDialog = new DatePickerDialog(Identification.this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {

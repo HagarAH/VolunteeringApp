@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SmsVerify">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_corners_3"
+            android:padding="12dp"
+            android:src="@drawable/common_full_open_on_phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="SMS Onayla"
+            android:textColor="@color/black"
+            android:textSize="46sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-medium"
+            android:text=" Onay alabilmeniz için bu doğrulama kodunu ilgili kutucuğa girmeniz yeterli olacaktır."
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/smsArray1"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smsArray2"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smsArray3"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smsArray4"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smsArray5"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smsArray6"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/rounded_background"
+                android:hint="#"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text=" SMS mesajı gelmedi mi? "
+                android:textAlignment="center"
+                android:paddingLeft="30dp"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/resendSMSTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text=" TEKRAR GÖNDER "
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textColor="@color/primary_100"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/buttonVerifyOtp"
+            android:layout_width="110dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="46dp"
+            android:background="@drawable/rounded_background"
+            android:text="Doğrula"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

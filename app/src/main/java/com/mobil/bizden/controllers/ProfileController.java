@@ -1,6 +1,14 @@
 package com.mobil.bizden.controllers;
+import android.app.Activity;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.TaskExecutors;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -8,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.mobil.bizden.models.Profile;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class ProfileController {
     private FirebaseAuth mAuth;
@@ -30,7 +39,7 @@ public class ProfileController {
                         if (task.isSuccessful()) {
                             // Profile updated successfully in Firebase Authentication
                             // Now update the user's document in Firestore
-                            DocumentReference userRef = mFirestore.collection("users")
+                            DocumentReference userRef = mFirestore.collection("profiles")
                                     .document(mCurrentUser.getUid());
 
                             // Create a Profile object
@@ -62,6 +71,40 @@ public class ProfileController {
         void onProfileUpdateSuccess();
         void onProfileUpdateFailure();
     }
+
+    public void verifyPhoneNumber(String phoneNumber, Activity activity, PhoneVerificationCallback callback) {
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,
+                60, // Timeout duration in seconds
+                TimeUnit.SECONDS,
+                activity,
+                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                    @Override
+                    public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                        // Verification completed successfully
+                        callback.onPhoneVerificationSuccess(phoneAuthCredential);
+                    }
+
+                    @Override
+                    public void onVerificationFailed(FirebaseException e) {
+                        // Verification failed
+                        callback.onPhoneVerificationFailure(e);
+                    }
+
+                    @Override
+                    public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                        // Code sent successfully
+                        callback.onCodeSent(verificationId, forceResendingToken);
+                    }
+                });
+    }
+
+    public interface PhoneVerificationCallback {
+        void onPhoneVerificationSuccess(PhoneAuthCredential credential);
+        void onPhoneVerificationFailure(Exception e);
+        void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken);
+    }
+
 
 
     public interface ProfileCheckCallback {
