@@ -86,14 +86,14 @@
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="5dp"
+        android:layout_width="410dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="670dp"
         android:paddingBottom="0dp"
         android:layout_marginEnd="0sp"
 
-        android:background="@color/colorPrimary">
+        android:background="@color/primary_100">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,15 +104,15 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="35sp"
-                app:srcCompat="@android:drawable/ic_dialog_email"
+                app:srcCompat="@drawable/settings"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="barinaklar"
+                android:text="Ayarlar"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:layout_marginLeft="20sp"
+                android:layout_marginLeft="30sp"
                 android:id="@+id/textbarinak"
                 >
 
@@ -125,15 +125,15 @@
             <ImageView
                 android:layout_marginTop="10dp"
                 android:id="@+id/imageView5"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="50sp"
-                app:srcCompat="@android:drawable/sym_action_chat"
+                app:srcCompat="@drawable/homeicon"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="message"
+                android:text="Ana sayfa"
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:layout_marginLeft="40dp">
@@ -155,7 +155,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ara"
+                android:text="Ara"
                 android:gravity="center"
                 android:paddingLeft="15sp"
                 android:textSize="16sp"
@@ -175,7 +175,7 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="50dp"
                 android:background="@drawable/rounded_background"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/primary_100"
                 android:outlineSpotShadowColor="@color/black"
                 app:srcCompat="@drawable/fui_ic_anonymous_white_24dp" />
 
@@ -183,27 +183,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="profil"
+                android:text="Profil"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="53dp"
                 android:id="@+id/textViewprofil">
 
             </TextView>
         </LinearLayout>
 
 
-
-
-
-
-
-
-
-
-
-
     </LinearLayout>
+
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
