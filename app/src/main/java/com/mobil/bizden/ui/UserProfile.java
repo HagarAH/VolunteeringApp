@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mobil.bizden.R;
 
-public class userprofile extends AppCompatActivity {
+public class UserProfile extends AppCompatActivity {
 
     private Button button;
     @SuppressLint("MissingInflatedId")
@@ -22,7 +22,7 @@ public class userprofile extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(userprofile.this, Identification.class);
+                Intent intent = new Intent(UserProfile.this, Identification.class);
                 startActivity(intent);
             }
         });

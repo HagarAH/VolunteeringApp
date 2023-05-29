@@ -43,7 +43,7 @@ public class Home extends AppCompatActivity {
         textViewprofil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, userprofile.class);
+                Intent intent = new Intent(Home.this, UserProfile.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +51,7 @@ public class Home extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, userprofile.class);
+                Intent intent = new Intent(Home.this, UserProfile.class);
                 startActivity(intent);
             }
         });

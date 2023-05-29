@@ -56,11 +56,12 @@
                 android:layout_height="50dp"
                 android:text="+90"
                 android:textSize="20sp"
-                android:padding="12dp"
+                android:textAlignment="center"
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
+                android:padding="10dp"
                 android:background="@drawable/rounded_background"
-                android:textColor="@color/mavi"
+
                 android:layout_marginRight="12dp"
                 />
 
@@ -77,10 +78,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonVerifyOtp"
-            android:layout_width="110dp"
+            android:id="@+id/buttonNextOtp"
+            android:layout_width="wrap_content"
             android:layout_height="55dp"
-            android:text="Doğrula"
+            android:text="Gönder"
             android:textColor="@color/white"
             android:layout_marginTop="46dp"
             android:layout_gravity="center"

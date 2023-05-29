@@ -16,28 +16,26 @@
         android:id="@+id/updateProfileText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="13dp"
-        android:layout_marginLeft="12dp"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginTop="10dp"
+        android:textSize="36sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Kimlik doğrulama" />
 
-        android:text="Profilinizi Güncelleyin"
-        android:textColor="@color/primary_100" />
-    <View
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:background="@color/primary_100" />
     <TextView
         android:id="@+id/updateProfileTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="13dp"
-        android:layout_marginLeft="12dp"
-        android:textSize="15sp"
-        android:fontFamily="sans-serif-smallcaps"
-
-        android:text="Kimliğinizde olduğu gibi doldurunuz"
-        android:textColor="@color/mavi" />
+        android:layout_gravity="center"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:layout_marginTop="1dp"
+        android:text="Güvenliği artırmak ve gönüllü yönetimini kolaylaştırmak için kimlik bilgilerinizi isteriz. Daha güvenli ve düzenli bir ortam oluşturma konusundaki işbirliğiniz için teşekkür ederiz."
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -92,11 +90,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_background"
-            android:hint="Soyadınızı girin"
+            android:hint="Soyadınızı giriniz"
             android:inputType="text"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:paddingTop="2dp"
-
             android:textColor="@android:color/black"
             android:textColorHint="#999999" />
 
@@ -129,7 +127,7 @@
             android:focusable="false"
             android:clickable="false"
             android:background="@drawable/rounded_background"
-            android:hint="Doğum tarihinizi seçin"
+            android:hint="Doğum tarihinizi seçiniz"
             android:inputType="date"
             android:paddingLeft="20dp"
             android:paddingTop="2dp"
@@ -254,25 +252,34 @@
             android:layout_alignEnd="@id/editTextID"
             android:textAlignment="center"
             android:text="▼"
-            android:textColor="@color/mavi"
-            android:textSize="20sp"
+            android:textSize="10sp"
             android:background="@drawable/rounded_corners_3"
            />
         <Spinner
             android:id="@+id/spinnerComboBox"
             android:layout_width="60dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:outlineSpotShadowColor="@color/white"
-            android:layout_below="@id/textViewID"
-            android:layout_alignLeft="@id/IdComboBox"
-            android:layout_alignTop="@id/IdComboBox"
+            android:layout_below="@id/IdComboBox"
+            android:layout_alignStart="@id/IdComboBox"
+            android:layout_alignEnd="@id/IdComboBox"
+            android:dropDownWidth="wrap_content"
+            android:background="@color/white"
+            android:tooltipText="Kimlik tipini seçiniz"
+
+
+
             />
 
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/transparent" />
+
 
         <Button
             android:id="@+id/verifyBtn"
@@ -295,9 +302,30 @@
             android:layout_marginLeft="22dp"
             android:layout_marginTop="39dp"
             android:layout_toEndOf="@+id/verifyBtn"
-            android:outlineSpotShadowColor="@color/primary_100" />
+            android:outlineAmbientShadowColor="@color/primary_100"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doneCheck"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/idNextBtn"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_below="@id/verifyBtn"-->
+<!--            android:layout_alignStart="@id/verifyBtn"-->
+<!--            android:layout_marginStart="4dp"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:background="@drawable/rounded_background"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="Devam"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--             />-->
 
     </RelativeLayout>
+
 
 
 

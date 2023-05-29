@@ -1,9 +1,5 @@
 package com.mobil.bizden.controllers;
 import android.app.Activity;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,7 +11,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mobil.bizden.models.Profile;
 
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class ProfileController {
@@ -140,6 +135,46 @@ public class ProfileController {
             }
         });
     }
+    public interface ProfileCompletenessCheckCallback {
+        void onIdIncomplete();
+        void onPhoneIncomplete();
+        void onProfileComplete();
+        void onCheckError(Exception e);
+    }
+
+    public void checkProfileCompleteness(String userId, ProfileCompletenessCheckCallback callback) {
+        DocumentReference profileRef = mFirestore.collection("profiles").document(userId);
+
+        profileRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document != null && document.exists()) {
+                    Profile profile = document.toObject(Profile.class);
+                    if (profile != null) {
+                        // Check if ID related information is incomplete
+                        if (profile.getFirstName() == null || profile.getFirstName().isEmpty()
+                                || profile.getLastName() == null || profile.getLastName().isEmpty()
+                                || profile.getTcId() == null || profile.getTcId().isEmpty()
+                                || profile.getBirthDate() == null || profile.getBirthDate().isEmpty()) {
+                            callback.onIdIncomplete();
+                        }
+                        // Check if phone is incomplete
+                        else if (profile.getTelephone() == null || profile.getTelephone().isEmpty()) {
+                            callback.onPhoneIncomplete();
+                        }
+                        else {
+                            callback.onProfileComplete();
+                        }
+                    }
+                } else {
+                    callback.onCheckError(new Exception("Profile document doesn't exist"));
+                }
+            } else {
+                callback.onCheckError(task.getException());
+            }
+        });
+    }
+
 
 
     // Other methods related to profile management can be added here

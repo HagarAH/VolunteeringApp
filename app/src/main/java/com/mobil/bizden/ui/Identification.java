@@ -3,7 +3,6 @@ package com.mobil.bizden.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +12,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobil.bizden.API.ForeignIdVerification;
@@ -34,7 +34,7 @@ public class Identification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_profile);
+        setContentView(R.layout.activity_identification);
         Spinner spinnerComboBox = findViewById(R.id.spinnerComboBox);
         Button idBtn = findViewById(R.id.IdComboBox);
         ProgressBar progressBar= findViewById(R.id.progressbarId);
@@ -46,50 +46,49 @@ public class Identification extends AppCompatActivity {
         Button verifyBtn= findViewById(R.id.verifyBtn);
         String datePattern = "^\\d{2}/\\d{2}/\\d{4}$";
         // Create an ArrayAdapter with the options
-        String[] optionsArray= new String[2];
+        String[] optionsArray= new String[3];
         datePickerButton = findViewById(R.id.datePickerButton);
-        optionsArray[0]="T.C";
+        optionsArray[0]=" ";
         optionsArray[1]="Yabancı";
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, optionsArray);
+        optionsArray[2]="T.C";
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, optionsArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         progressBar.setVisibility(View.GONE);
+        idBtn.setText("▼");
 // Set the adapter on the spinner
-        spinnerComboBox.setAdapter(adapter);
+
 
 // Set an item selected listener on the spinner
         spinnerComboBox.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // Update the EditText with the selected option
+
                 String selectedOption = parent.getItemAtPosition(position).toString();
                 idBtn.setText(selectedOption);
-                editTextID.setHint("11 haneli kimlik numaranızı giriniz");
+                ((TextView)view).setText(null);
+
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Handle the case when no option is selected
+                idBtn.setText("▼");
             }
         });
-
-        editTextDateOfBirth.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String inputDate = editTextDateOfBirth.getText().toString();
-                    if (!inputDate.matches(datePattern)) {
-                        editTextDateOfBirth.setError("Hatalı tarih formatı lütfen bu formatı izleyin: gg/aa/yyyy");
-                    }
-                }
-            }
-        });
+        spinnerComboBox.setAdapter(adapter);
 // Set an onClickListener on the EditText to open the spinner dropdown
         idBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                idBtn.setText("▼");
+                spinnerComboBox.setVisibility(View.VISIBLE);
                 spinnerComboBox.performClick();
+
+
             }
         });
+
 
 
 
@@ -105,9 +104,7 @@ public class Identification extends AppCompatActivity {
             public void onProfileUpdateSuccess() {
                 Toast.makeText(Identification.this, "Kimliğinizi doğrulandı ve kaydedildi",
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Identification.this, Home.class);
-                startActivity(intent);
-                finish();
+
             }
 
             @Override
@@ -139,7 +136,7 @@ public class Identification extends AppCompatActivity {
 
 
                     } else{
-                        if(idBtn.getText().toString()==optionsArray[0]){
+                        if(idBtn.getText().toString()==optionsArray[2]){
                             //TC
                             IdVerification idVerification= new IdVerification(fName,lName,year_,ID);
 
