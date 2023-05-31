@@ -13,5 +13,7 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="transparent">#9A9A9A</color>
-    <color name="mavi">#3F51B5</color>
+    <color name="mavi">#00EDFF</color>
+    <color name="mavi2">#3A3F40</color>
+
 </resources>

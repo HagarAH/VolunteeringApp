@@ -18,10 +18,20 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
+
+    <string name="error_empty_province">Şehir boş olamaz</string>
+    <string name="error_invalid_province">Şehir bulunamadı</string>
+
+
+
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="menu_toplanma">Toplanma Alanları</string>
+    <string name="menu_basvuru">Başvurularım</string>
+    <string name="menu_giriskodlar">Giriş Kodlarım</string>
+    <string name="menu_logout">Çıkış Yap</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- TODO: Remove or change this placeholder text -->

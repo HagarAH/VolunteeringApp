@@ -24,6 +24,9 @@ public class UserController {
     public UserController() {
         mAuth = FirebaseAuth.getInstance();
     }
+    public FirebaseUser getCurrentUser() {
+        return mAuth.getCurrentUser();
+    }
 
     public void registerUser(String email, String password, final RegistrationCallback callback) {
         mAuth.createUserWithEmailAndPassword(email, password)

@@ -6,20 +6,24 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.mobil.bizden.ui.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_toplanma"
+        android:name="com.mobil.bizden.ui.ui.home.toplanmaFragment"
+        android:label="@string/menu_toplanma"
+        tools:layout="@layout/fragment_toplanma" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.mobil.bizden.ui.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_basvuru"
+        android:name="com.mobil.bizden.ui.ui.basvuru.GalleryFragment"
+        android:label="@string/menu_basvuru"
+        tools:layout="@layout/fragment_basvuru" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_giriskodlar"
         android:name="com.mobil.bizden.ui.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_giriskodlar"
         tools:layout="@layout/fragment_slideshow" />
+
+
+
+
 </navigation>

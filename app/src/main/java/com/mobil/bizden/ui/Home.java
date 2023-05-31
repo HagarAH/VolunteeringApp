@@ -18,6 +18,7 @@ import com.mobil.bizden.R;
 
 public class Home extends AppCompatActivity {
     FirebaseAuth auth;
+    private ImageView imageViewAyarlar;
     FirebaseUser user;
     DrawerLayout drawerLayout;
     private ImageView imageView;
@@ -30,20 +31,30 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         imageViewbarinak = findViewById(R.id.imageViewbarinak);
         imageViewbarinak.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, kod.class);
-                startActivity(intent);
+                drawerLayout = findViewById(R.id.drawer_layout);
+                navigationDrawer = findViewById(R.id.navigation_drawer);
+                if (drawerLayout.isDrawerOpen(navigationDrawer)) {
+                    drawerLayout.closeDrawer(navigationDrawer);
+                } else {
+                    drawerLayout.openDrawer(navigationDrawer);
+                }
             }
         });
+
+
+
 
         textViewprofil= findViewById(R.id.textViewprofil);
         textViewprofil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, userprofile.class);
+                Intent intent = new Intent(Home.this, UserProfile.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +62,7 @@ public class Home extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, userprofile.class);
+                Intent intent = new Intent(Home.this, UserProfile.class);
                 startActivity(intent);
             }
         });
@@ -69,6 +80,7 @@ public class Home extends AppCompatActivity {
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
 
 
         auth= FirebaseAuth.getInstance();
@@ -96,6 +108,9 @@ public class Home extends AppCompatActivity {
     }
 
 
+
+
+
     public void onToggleClick(View view) {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationDrawer = findViewById(R.id.navigation_drawer);
@@ -105,4 +120,5 @@ public class Home extends AppCompatActivity {
             drawerLayout.openDrawer(navigationDrawer);
         }
     }
+
 }
