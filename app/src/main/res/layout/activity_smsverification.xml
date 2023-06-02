@@ -10,11 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_marginTop="20dp">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
             android:background="@drawable/rounded_corners_3"
             android:padding="12dp"
@@ -163,11 +164,12 @@
 
         <Button
             android:id="@+id/buttonVerifyOtp"
-            android:layout_width="110dp"
-            android:layout_height="55dp"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
             android:layout_marginTop="46dp"
             android:background="@drawable/rounded_background"
+            android:textSize="24sp"
             android:text="Doğrula"
             android:textColor="@color/white" />
 

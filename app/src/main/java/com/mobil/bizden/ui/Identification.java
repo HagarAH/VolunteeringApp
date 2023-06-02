@@ -3,6 +3,7 @@ package com.mobil.bizden.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +20,7 @@ import com.mobil.bizden.API.ForeignIdVerification;
 import com.mobil.bizden.API.IdVerification;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
+import com.mobil.bizden.controllers.UserController;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -99,11 +101,43 @@ public class Identification extends AppCompatActivity {
             }
         });
         ProfileController profileController= new ProfileController();
+
+        ProfileController.ProfileCompletenessCheckCallback callback=new ProfileController.ProfileCompletenessCheckCallback() {
+            @Override
+            public void onIdIncomplete() {
+
+            }
+
+            @Override
+            public void onPhoneIncomplete() {
+
+                Intent intent= new Intent(Identification.this,PhoneVerify.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onProfileComplete() {
+                Intent intent= new Intent(Identification.this,Home.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onCheckError(Exception e) {
+                Toast.makeText(Identification.this, e.toString(),
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        };
         ProfileController.ProfileUpdateCallback profileUpdateCallback= new ProfileController.ProfileUpdateCallback() {
             @Override
             public void onProfileUpdateSuccess() {
                 Toast.makeText(Identification.this, "Kimliğinizi doğrulandı ve kaydedildi",
                         Toast.LENGTH_SHORT).show();
+                UserController userController= new UserController();
+
+                profileController.checkProfileCompleteness(userController.getCurrentUser().getUid(),callback);
 
             }
 

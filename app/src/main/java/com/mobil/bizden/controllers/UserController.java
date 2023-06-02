@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mobil.bizden.models.Profile;
 import com.mobil.bizden.models.User;
+import com.mobil.bizden.models.UserLocation;
 
 import java.util.Date;
 
@@ -59,6 +60,22 @@ public class UserController {
                                                 Log.e(TAG, "Failed to add UID to 'profiles' collection: " + errorMessage);
                                                 callback.onRegistrationFailure(errorMessage);
                                             });
+                                    //Add UID to 'userLocations' collection
+
+                                    com.mobil.bizden.models.UserLocation userLocationModel= new UserLocation(uid,"","","");
+                                    FirebaseFirestore.getInstance().collection("userLocations").document(uid)
+                                            .set(userLocationModel)
+                                            .addOnSuccessListener(aVoid1 -> {
+                                                // UID added to 'profiles' collection successfully
+                                                callback.onRegistrationSuccess(user);
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                // Failed to add UID to 'profiles' collection
+                                                String errorMessage = e.getMessage();
+                                                Log.e(TAG, "Failed to add UID to 'userLocations' collection: " + errorMessage);
+                                                callback.onRegistrationFailure(errorMessage);
+                                            });
+
                                 })
                                 .addOnFailureListener(e -> {
                                     // Failed to add User to 'users' collection
@@ -66,6 +83,10 @@ public class UserController {
                                     Log.e(TAG, "Failed to add User to 'users' collection: " + errorMessage);
                                     callback.onRegistrationFailure(errorMessage);
                                 });
+
+
+
+
                     } else {
                         String errorMessage = task.getException().getMessage();
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
