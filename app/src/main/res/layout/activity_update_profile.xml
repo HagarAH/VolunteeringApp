@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="121dp"
+        android:layout_width="122dp"
         android:layout_height="74dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="70dp"
@@ -133,13 +133,13 @@
 
             />
         <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:background="@color/white"
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:background="@color/white"
 
-        android:text="Telefon Numaranız" />
+            android:text="Telefon Numaranız" />
     </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -209,7 +209,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/rounded_background"
         android:gravity="center"
-        android:text="Bilgilerimi Güncelle"
+        android:text=" Kaydet"
         android:textColor="@color/white"
         android:textSize="11dp"></Button>
 

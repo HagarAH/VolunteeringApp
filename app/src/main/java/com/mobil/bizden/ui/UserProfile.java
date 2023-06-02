@@ -31,7 +31,7 @@ public class UserProfile extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserProfile.this, Identification.class);
+                Intent intent = new Intent(UserProfile.this, updateProfile.class);
                 startActivity(intent);
             }
         });
