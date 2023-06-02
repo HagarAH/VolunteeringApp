@@ -1,5 +1,7 @@
 package com.mobil.bizden.controllers;
+
 import android.app.Activity;
+
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,6 +19,8 @@ public class ProfileController {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mCurrentUser;
+    private PhoneAuthProvider.ForceResendingToken mResendToken;
+    private String mVerificationId;
 
     public ProfileController() {
         mAuth = FirebaseAuth.getInstance();
@@ -62,49 +66,55 @@ public class ProfileController {
         }
     }
 
+
+
+    public void updateProfilePhoneNumber(String phoneNum, ProfileUpdateCallback callback) {
+        if (mCurrentUser != null) {
+            // Update user profile in Firebase Authentication
+            mCurrentUser.updateProfile(new UserProfileChangeRequest.Builder().build())
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            // Profile updated successfully in Firebase Authentication
+                            // Now update the user's document in Firestore
+                            DocumentReference userRef = mFirestore.collection("profiles")
+                                    .document(mCurrentUser.getUid());
+
+                            // Save the profile document in Firestore
+                            userRef.update("telephone",phoneNum)
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            // Profile document created successfully in Firestore
+                                            // Invoke the success callback
+                                            callback.onProfileUpdateSuccess();
+                                        } else {
+                                            // Failed to create profile document in Firestore
+                                            // Invoke the error callback
+                                            callback.onProfileUpdateFailure();
+                                        }
+                                    });
+                        } else {
+                            // Failed to update user profile in Firebase Authentication
+                            // Invoke the error callback
+                            callback.onProfileUpdateFailure();
+                        }
+                    });
+        }
+    }
+
+
+
+
     public interface ProfileUpdateCallback {
         void onProfileUpdateSuccess();
+
         void onProfileUpdateFailure();
     }
 
-    public void verifyPhoneNumber(String phoneNumber, Activity activity, PhoneVerificationCallback callback) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNumber,
-                60, // Timeout duration in seconds
-                TimeUnit.SECONDS,
-                activity,
-                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                    @Override
-                    public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-                        // Verification completed successfully
-                        callback.onPhoneVerificationSuccess(phoneAuthCredential);
-                    }
-
-                    @Override
-                    public void onVerificationFailed(FirebaseException e) {
-                        // Verification failed
-                        callback.onPhoneVerificationFailure(e);
-                    }
-
-                    @Override
-                    public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                        // Code sent successfully
-                        callback.onCodeSent(verificationId, forceResendingToken);
-                    }
-                });
-    }
-
-    public interface PhoneVerificationCallback {
-        void onPhoneVerificationSuccess(PhoneAuthCredential credential);
-        void onPhoneVerificationFailure(Exception e);
-        void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken);
-    }
-
-
-
     public interface ProfileCheckCallback {
         void onProfileExists(Profile profile);
+
         void onProfileEmpty();
+
         void onProfileCheckError(Exception e);
     }
 
@@ -135,10 +145,14 @@ public class ProfileController {
             }
         });
     }
+
     public interface ProfileCompletenessCheckCallback {
         void onIdIncomplete();
+
         void onPhoneIncomplete();
+
         void onProfileComplete();
+
         void onCheckError(Exception e);
     }
 
@@ -161,8 +175,7 @@ public class ProfileController {
                         // Check if phone is incomplete
                         else if (profile.getTelephone() == null || profile.getTelephone().isEmpty()) {
                             callback.onPhoneIncomplete();
-                        }
-                        else {
+                        } else {
                             callback.onProfileComplete();
                         }
                     }
@@ -175,8 +188,6 @@ public class ProfileController {
         });
     }
 
-
-
     // Other methods related to profile management can be added here
     public boolean isProfileComplete(String displayName, String email) {
         return displayName != null && !displayName.isEmpty() &&
@@ -186,4 +197,8 @@ public class ProfileController {
     public void signOut() {
         mAuth.signOut();
     }
+
+
 }
+
+

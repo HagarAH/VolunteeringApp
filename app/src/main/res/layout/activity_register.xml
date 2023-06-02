@@ -18,46 +18,124 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="40sp"/>
-
+        android:layout_marginTop="20sp"/>
     <LinearLayout
         android:id="@+id/logoLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="32dp"
+        android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView"
         app:layout_constraintVertical_bias="0.0">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent">
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="17dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/rounded_background"
+            android:paddingTop="2dp"
+            android:hint="E-postanızı buraya giriniz"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewLabel1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Kullanıcı Adı"
-            android:padding="20dp" />
+            android:layout_alignStart="@id/emailEditText"
+            android:layout_alignTop="@id/emailEditText"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="17dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="E-posta"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/emailEditText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="17dp"
+            android:hint="Şifrenizi buraya giriniz"
+            android:background="@drawable/rounded_background"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:paddingLeft="20dp"
+            android:textColorHint="#999999" />
+
+        <TextView
+            android:id="@+id/textViewLabel2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Şifre"
-
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:textColor="@android:color/black" />
-
+            android:layout_alignStart="@id/passwordEditText"
+            android:layout_alignTop="@id/passwordEditText"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Şifre"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
         <EditText
             android:id="@+id/passwordConfirmEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Şifre Tekrarı"
+            android:layout_height="60dp"
+            android:layout_below="@id/passwordEditText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Şifrenizi buraya giriniz"
+            android:background="@drawable/rounded_background"
+            android:paddingTop="2dp"
+            android:textColor="@android:color/black"
+            android:paddingLeft="20dp"
+            android:textColorHint="#999999" />
 
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/textViewLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/passwordConfirmEditText"
+            android:layout_alignTop="@id/passwordConfirmEditText"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-16dp"
+            android:background="@android:color/white"
+            android:padding="4dp"
+            android:text="Şifre Tekrarı"
+            android:textColor="@color/primary_100"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -82,8 +160,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Giriş Yap"
-            android:textColor="@android:color/white"
-            android:background="@color/colorPrimary"
+            android:textColor="@color/primary_100"
             android:textSize="20sp"
             android:textStyle="bold" />
 

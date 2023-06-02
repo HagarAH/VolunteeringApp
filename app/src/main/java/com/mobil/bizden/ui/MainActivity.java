@@ -29,15 +29,13 @@ public class MainActivity extends AppCompatActivity {
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_main);
-
-
                 logoImageView = findViewById(R.id.logo_image_view);
-
                 logoImageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         FirebaseAuth mAuth= FirebaseAuth.getInstance();
                         FirebaseUser user= mAuth.getCurrentUser();
+
                         if (user!= null){
                             ProfileController.ProfileCheckCallback profileCheckCallback= new ProfileController.ProfileCheckCallback() {
                                 @Override

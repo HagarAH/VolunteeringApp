@@ -221,19 +221,7 @@ public class Identification extends AppCompatActivity {
 
 
     }
-    public static boolean verifyTelephoneNumber(String phoneNumber) {
-        // Regular expression pattern for a valid telephone number in the pattern "+90 233 345 56 56"
-        String pattern = "^\\+90\\s\\d{3}\\s\\d{3}\\s\\d{2}\\s\\d{2}$";
 
-        // Create a Pattern object with the given pattern
-        Pattern regexPattern = Pattern.compile(pattern);
-
-        // Create a Matcher object for the given input
-        Matcher matcher = regexPattern.matcher(phoneNumber);
-
-        // Return true if the input matches the pattern, false otherwise
-        return matcher.matches();
-    }
     Calendar calendar;
 
     private void showDatePickerDialog() {
