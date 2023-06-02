@@ -58,15 +58,31 @@ public class Register extends AppCompatActivity {
             @Override
             public void onRegistrationSuccess(FirebaseUser user) {
                 Toast.makeText(Register.this,"Hesap Oluşturuldu. Lütfen giriş yap",Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+                passConfirmE.setText("");
+                passwordE.setText("");
+                emailE.setText("");
 
             }
 
             @Override
             public void onRegistrationFailure(String errorMessage) {
+                String translatedErrorMessage;
 
-                Toast.makeText(Register.this, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show();
+                if (errorMessage.contains("The email address is already in use by another account.")) {
+                    translatedErrorMessage = "Bu e-posta adresi zaten başka bir hesap tarafından kullanılıyor.";
+                } else if (errorMessage.contains("The given password is invalid.")) {
+                    translatedErrorMessage = "Geçersiz bir şifre girdiniz.";
+                } else if (errorMessage.contains("We have blocked all requests from this device")) {
+                    translatedErrorMessage = "Bu cihazdan gelen tüm istekler engellendi.";
+                } else {
+                    translatedErrorMessage = "Hesap oluşturulamadı: " + errorMessage;
+                }
+
+                Toast.makeText(Register.this, translatedErrorMessage, Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
             }
+
         };
 // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -86,6 +102,9 @@ public class Register extends AppCompatActivity {
                     return;
                 }else if(TextUtils.isEmpty(confirmPassword)){
                     Toast.makeText(Register.this,"Lütfen şifre tekrarını giriniz.",Toast.LENGTH_SHORT).show();
+                    return;
+                }else if((!confirmPassword.equals(password))){
+                    Toast.makeText(Register.this,"Şifre ve şifre tekrarı eşleşmiyor.",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 userController.registerUser(email.trim(),password, registrationCallback);

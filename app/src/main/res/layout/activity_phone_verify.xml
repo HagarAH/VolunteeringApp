@@ -71,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="phone"
+                android:maxLength="10"
                 android:background="@drawable/rounded_background"
                 android:paddingLeft="12dp"
                 android:hint="Telefon numarasınızı giriniz" />
@@ -79,11 +80,12 @@
 
         <Button
             android:id="@+id/buttonNextOtp"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:text="Gönder"
+            android:textSize="20sp"
             android:textColor="@color/white"
-            android:layout_marginTop="46dp"
+            android:layout_marginTop="86dp"
             android:layout_gravity="center"
             android:background="@drawable/rounded_background"/>
 
@@ -103,7 +105,10 @@
 
     </LinearLayout>
 
-
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 

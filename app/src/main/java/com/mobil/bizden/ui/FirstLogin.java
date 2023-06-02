@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.common.base.Verify;
 import com.mobil.bizden.R;
@@ -13,13 +14,15 @@ import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
 
 public class FirstLogin extends AppCompatActivity {
-Button nextBtn;
+    private Button nextBtn;
+    private TextView logoutBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_login);
         nextBtn= findViewById(R.id.firstLoginBtn);
         UserController userController = new UserController();
+        logoutBtn=findViewById(R.id.logoutBtnFL);
         ProfileController.ProfileCompletenessCheckCallback isComplete= new ProfileController.ProfileCompletenessCheckCallback(){
 
             @Override
@@ -58,5 +61,14 @@ Button nextBtn;
             }
         });
 
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userController.logoutUser();
+                Intent intent= new Intent(FirstLogin.this,Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

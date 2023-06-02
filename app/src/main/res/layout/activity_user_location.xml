@@ -167,7 +167,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/buttonNextOtp"
+            android:id="@+id/saveLocationBtn"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:text="Kaydet"

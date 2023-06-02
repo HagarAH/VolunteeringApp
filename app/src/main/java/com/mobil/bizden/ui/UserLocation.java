@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.mobil.bizden.API.LocationCCD;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.UserController;
+import com.mobil.bizden.controllers.UserLocationController;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,10 +25,13 @@ import java.util.Set;
 public class UserLocation extends AppCompatActivity {
     private LocationCCD locationCCD;
     private String selectedProvince;
+    private String selectedDistrict;
     private ArrayAdapter<String> provinceAdapter;
     private ArrayAdapter<String> districtAdapter;
     private Set<String> loadedProvinces;
     private Set<String> loadedDistricts;
+    private Button saveBtn;
+    private EditText adressLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,8 @@ public class UserLocation extends AppCompatActivity {
         setContentView(R.layout.activity_user_location);
         AutoCompleteTextView autoCompleteDistrict = findViewById(R.id.autocomplete_districtAuto);
         AutoCompleteTextView autoCompleteProvince = findViewById(R.id.autocomplete_provinceAuto);
+        saveBtn= findViewById(R.id.saveLocationBtn);
+        adressLine= findViewById(R.id.editTextAddress);
 
         LocationCCD.LocationListener locationListener = new LocationCCD.LocationListener() {
             @Override
@@ -99,6 +108,38 @@ public class UserLocation extends AppCompatActivity {
                     autoCompleteProvince.setError(getString(R.string.error_invalid_province));
                 } else {
                     locationCCD.loadDistricts(selectedProvince, locationListener);
+                }
+            }
+        });
+
+        UserLocationController.UserLocationCallback callback=new UserLocationController.UserLocationCallback() {
+            @Override
+            public void onCallback(com.mobil.bizden.models.UserLocation userLocation) {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        };
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!selectedProvince.isEmpty()){
+                    selectedDistrict= autoCompleteDistrict.getText().toString();
+                    if (!selectedDistrict.isEmpty() && !adressLine.getText().toString().isEmpty()){
+
+                        UserLocationController userLocationController= new UserLocationController();
+                        UserController userController= new UserController();
+
+                        com.mobil.bizden.models.UserLocation location= new com.mobil.bizden.models.UserLocation(userController.getCurrentUser().getUid(),selectedDistrict,selectedDistrict, adressLine.getText().toString());
+                        userLocationController.addUserLocation(location, callback);
+                    }
+                    else {
+                        System.out.println("EKSIK BILGI");
+                    }
                 }
             }
         });
