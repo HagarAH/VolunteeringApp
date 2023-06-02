@@ -12,6 +12,8 @@ import com.google.common.base.Verify;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
+import com.mobil.bizden.controllers.UserLocationController;
+import com.mobil.bizden.models.User;
 
 public class FirstLogin extends AppCompatActivity {
     private Button nextBtn;
@@ -23,6 +25,21 @@ public class FirstLogin extends AppCompatActivity {
         nextBtn= findViewById(R.id.firstLoginBtn);
         UserController userController = new UserController();
         logoutBtn=findViewById(R.id.logoutBtnFL);
+        UserLocationController.UserLocationCheck callbackLocation= new UserLocationController.UserLocationCheck() {
+            @Override
+            public void onLocationFound() {
+                Intent intent = new Intent(FirstLogin.this, Home.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onLocationNotFound() {
+                Intent intent = new Intent(FirstLogin.this, UserLocation.class);
+                startActivity(intent);
+                finish();
+            }
+        };
         ProfileController.ProfileCompletenessCheckCallback isComplete= new ProfileController.ProfileCompletenessCheckCallback(){
 
             @Override
@@ -42,9 +59,8 @@ public class FirstLogin extends AppCompatActivity {
 
             @Override
             public void onProfileComplete() {
-                Intent intent = new Intent(FirstLogin.this, Home.class);
-                startActivity(intent);
-                finish();
+                UserLocationController userLocationController= new UserLocationController();
+                userLocationController.checkUserLocation(userController.getCurrentUser().getUid(),callbackLocation);
             }
 
             @Override
@@ -53,6 +69,7 @@ public class FirstLogin extends AppCompatActivity {
 
             }
         };
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

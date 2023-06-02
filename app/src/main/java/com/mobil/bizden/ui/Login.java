@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
+import com.mobil.bizden.controllers.UserLocationController;
 import com.mobil.bizden.models.Profile;
 
 public class Login extends AppCompatActivity {
@@ -38,24 +39,47 @@ public class Login extends AppCompatActivity {
 
     ProfileController profileController = new ProfileController();
 
-    ProfileController.ProfileCheckCallback checkCallback = new ProfileController.ProfileCheckCallback() {
-
+    UserLocationController.UserLocationCheck callbackLocation= new UserLocationController.UserLocationCheck() {
         @Override
-        public void onProfileExists(Profile profile) {
+        public void onLocationFound() {
             Intent intent = new Intent(Login.this, Home.class);
             startActivity(intent);
             finish();
         }
 
         @Override
-        public void onProfileEmpty() {
+        public void onLocationNotFound() {
+            Intent intent = new Intent(Login.this, FirstLogin.class);
+            startActivity(intent);
+            finish();
+        }
+    };
+
+
+    ProfileController.ProfileCompletenessCheckCallback checkCallback = new ProfileController.ProfileCompletenessCheckCallback() {
+
+        @Override
+        public void onIdIncomplete() {
             Intent intent = new Intent(Login.this, FirstLogin.class);
             startActivity(intent);
             finish();
         }
 
         @Override
-        public void onProfileCheckError(Exception e) {
+        public void onPhoneIncomplete() {
+            Intent intent = new Intent(Login.this, FirstLogin.class);
+            startActivity(intent);
+            finish();
+        }
+
+        @Override
+        public void onProfileComplete() {
+            UserLocationController userLocationController= new UserLocationController();
+            userLocationController.checkUserLocation(userController.getCurrentUser().getUid(),callbackLocation);
+        }
+
+        @Override
+        public void onCheckError(Exception e) {
             System.out.println(e);
         }
     };
@@ -65,7 +89,7 @@ public class Login extends AppCompatActivity {
 
         @Override
         public void onSuccess(FirebaseUser userid) {
-            profileController.checkDocument(userid.getUid(), checkCallback);
+            profileController.checkProfileCompleteness(userid.getUid(), checkCallback);
         }
 
         @Override

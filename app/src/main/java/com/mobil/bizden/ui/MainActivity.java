@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
+import com.mobil.bizden.controllers.UserLocationController;
 import com.mobil.bizden.models.Profile;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +49,21 @@ public class MainActivity extends AppCompatActivity {
         // Start the animation delay
         handler.postDelayed(animationDelayRunnable, 2000); // 2000 milliseconds delay
     }
+    UserLocationController.UserLocationCheck callbackLocation= new UserLocationController.UserLocationCheck() {
+        @Override
+        public void onLocationFound() {
+            Intent intent = new Intent(MainActivity.this, Home.class);
+            startActivity(intent);
+            finish();
+        }
+
+        @Override
+        public void onLocationNotFound() {
+            Intent intent = new Intent(MainActivity.this, UserLocation.class);
+            startActivity(intent);
+            finish();
+        }
+    };
 
     private void checkUserProf() {
         // Stop the animation delay if it's still running
@@ -57,28 +73,36 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user != null) {
-            ProfileController.ProfileCheckCallback profileCheckCallback = new ProfileController.ProfileCheckCallback() {
+            ProfileController.ProfileCompletenessCheckCallback profileCheckCallback = new ProfileController.ProfileCompletenessCheckCallback() {
                 @Override
-                public void onProfileExists(Profile profile) {
-                    Intent intent = new Intent(MainActivity.this, Home.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-                @Override
-                public void onProfileEmpty() {
+                public void onIdIncomplete() {
                     Intent intent = new Intent(MainActivity.this, FirstLogin.class);
                     startActivity(intent);
                     finish();
                 }
 
                 @Override
-                public void onProfileCheckError(Exception e) {
+                public void onPhoneIncomplete() {
+                    Intent intent = new Intent(MainActivity.this, FirstLogin.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
+                @Override
+                public void onProfileComplete() {
+                    UserLocationController userLocationController= new UserLocationController();
+                    userLocationController.checkUserLocation(user.getUid(),callbackLocation);
+
+                }
+
+                @Override
+                public void onCheckError(Exception e) {
                     System.out.println(e);
                 }
             };
             ProfileController profileController = new ProfileController();
-            profileController.checkDocument(user.getUid(), profileCheckCallback);
+            profileController.checkProfileCompleteness(user.getUid(), profileCheckCallback);
         } else {
             Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);

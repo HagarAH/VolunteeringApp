@@ -62,8 +62,6 @@ public class UserLocationController {
 
     public void checkUserLocation(String uid, final UserLocationCheck callback) {
         db.collection("userLocations").document(uid).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-
-
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {

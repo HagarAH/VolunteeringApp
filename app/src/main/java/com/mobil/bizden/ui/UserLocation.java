@@ -2,6 +2,7 @@ package com.mobil.bizden.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -12,11 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.mobil.bizden.API.LocationCCD;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.controllers.UserLocationController;
+import com.mobil.bizden.models.User;
 
 import java.util.HashSet;
 import java.util.List;
@@ -32,7 +35,7 @@ public class UserLocation extends AppCompatActivity {
     private Set<String> loadedDistricts;
     private Button saveBtn;
     private EditText adressLine;
-
+    private UserController userController= new UserController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +90,7 @@ public class UserLocation extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
                 selectedProvince = autoCompleteProvince.getText().toString().trim();
                 if (TextUtils.isEmpty(selectedProvince)) {
                     autoCompleteProvince.setError(getString(R.string.error_empty_province));
@@ -115,11 +119,15 @@ public class UserLocation extends AppCompatActivity {
         UserLocationController.UserLocationCallback callback=new UserLocationController.UserLocationCallback() {
             @Override
             public void onCallback(com.mobil.bizden.models.UserLocation userLocation) {
-
+                Toast.makeText(UserLocation.this, "Konumunuz başarıyla kaydedildi.", Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(UserLocation.this,Home.class);
+                startActivity(intent);
+                finish();
             }
 
             @Override
             public void onError(Exception e) {
+                Toast.makeText(UserLocation.this, e.toString(), Toast.LENGTH_SHORT).show();
 
             }
         };
@@ -132,13 +140,13 @@ public class UserLocation extends AppCompatActivity {
                     if (!selectedDistrict.isEmpty() && !adressLine.getText().toString().isEmpty()){
 
                         UserLocationController userLocationController= new UserLocationController();
-                        UserController userController= new UserController();
 
-                        com.mobil.bizden.models.UserLocation location= new com.mobil.bizden.models.UserLocation(userController.getCurrentUser().getUid(),selectedDistrict,selectedDistrict, adressLine.getText().toString());
+
+                        com.mobil.bizden.models.UserLocation location= new com.mobil.bizden.models.UserLocation(userController.getCurrentUser().getUid(),selectedProvince,selectedDistrict, adressLine.getText().toString());
                         userLocationController.addUserLocation(location, callback);
                     }
                     else {
-                        System.out.println("EKSIK BILGI");
+                        saveBtn.setError("Eksik bilgi");
                     }
                 }
             }
