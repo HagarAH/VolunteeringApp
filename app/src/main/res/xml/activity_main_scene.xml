@@ -6,7 +6,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="4431"
+        motion:duration="2231"
         motion:autoTransition="animateToEnd">
         <KeyFrameSet>
         </KeyFrameSet>
@@ -28,13 +28,13 @@
         <Constraint
             android:id="@+id/bizdenLogo"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="2"
-            android:scaleY="2"
+            android:scaleX="1"
+            android:scaleY="1"
             android:alpha="1"
             motion:transitionEasing="cubic(1,0,1,0)" />
         <Constraint
@@ -80,7 +80,7 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="8"
-            android:scaleY="8" />
+            android:scaleX="2"
+            android:scaleY="2" />
     </ConstraintSet>
 </MotionScene>

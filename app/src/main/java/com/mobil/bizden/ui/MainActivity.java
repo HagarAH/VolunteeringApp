@@ -8,33 +8,39 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.motion.widget.MotionLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserLocationController;
-
-
 public class MainActivity extends AppCompatActivity {
 
     private ImageView logoImageView;
     private View rootView;
     private Runnable animationDelayRunnable;
     private Handler handler = new Handler();
+    MotionLayout motionLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        motionLayout = findViewById(R.id.motionLayout);
         logoImageView = findViewById(R.id.bizdenLogo);
         rootView = findViewById(android.R.id.content);
-        rootView.setOnClickListener(new View.OnClickListener() {
+
+        motionLayout = findViewById(R.id.motionLayout);
+        logoImageView = findViewById(R.id.bizdenLogo);
+
+        motionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handler.removeCallbacks(animationDelayRunnable);
+                motionLayout.transitionToEnd();
                 checkUserProf();
             }
         });
@@ -47,26 +53,21 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // Start the animation delay
-        handler.postDelayed(animationDelayRunnable, 2000); // 2000 milliseconds delay
+        handler.postDelayed(animationDelayRunnable, 2000);
     }
-    UserLocationController.UserLocationCheck callbackLocation= new UserLocationController.UserLocationCheck() {
+    UserLocationController.UserLocationCheck callbackLocation = new UserLocationController.UserLocationCheck() {
         @Override
         public void onLocationFound() {
-            Intent intent = new Intent(MainActivity.this, Home.class);
-            startActivity(intent);
-            finish();
+            navigateTo(Home.class);
         }
 
         @Override
         public void onLocationNotFound() {
-            Intent intent = new Intent(MainActivity.this, UserLocation.class);
-            startActivity(intent);
-            finish();
+            navigateTo(UserLocation.class);
         }
     };
 
     private void checkUserProf() {
-        // Stop the animation delay if it's still running
         handler.removeCallbacks(animationDelayRunnable);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -76,23 +77,18 @@ public class MainActivity extends AppCompatActivity {
             ProfileController.ProfileCompletenessCheckCallback profileCheckCallback = new ProfileController.ProfileCompletenessCheckCallback() {
                 @Override
                 public void onIdIncomplete() {
-                    Intent intent = new Intent(MainActivity.this, FirstLogin.class);
-                    startActivity(intent);
-                    finish();
+                    navigateToFirstLogin();
                 }
 
                 @Override
                 public void onPhoneIncomplete() {
-                    Intent intent = new Intent(MainActivity.this, FirstLogin.class);
-                    startActivity(intent);
-                    finish();
-
+                    navigateToFirstLogin();
                 }
 
                 @Override
                 public void onProfileComplete() {
-                    UserLocationController userLocationController= new UserLocationController();
-                    userLocationController.checkUserLocation(user.getUid(),callbackLocation);
+                    UserLocationController userLocationController = new UserLocationController();
+                    userLocationController.checkUserLocation(user.getUid(), callbackLocation);
 
                 }
 
@@ -104,9 +100,18 @@ public class MainActivity extends AppCompatActivity {
             ProfileController profileController = new ProfileController();
             profileController.checkProfileCompleteness(user.getUid(), profileCheckCallback);
         } else {
-            Intent intent = new Intent(MainActivity.this, Login.class);
-            startActivity(intent);
-            finish();
+            navigateTo(Login.class);
         }
+    }
+
+    private void navigateToFirstLogin() {
+        navigateTo(FirstLogin.class);
+    }
+
+    private void navigateTo(Class<?> activityClass) {
+        handler.removeCallbacks(animationDelayRunnable);
+        Intent intent = new Intent(MainActivity.this, activityClass);
+        startActivity(intent);
+        finish();
     }
 }

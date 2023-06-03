@@ -23,9 +23,9 @@
 
         <ImageView
             android:id="@+id/bizdenLogo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/bizdenlogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/heartmended"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +33,9 @@
 
         <ImageView
             android:id="@+id/whiteHands"
-            android:layout_width="500dp"
-            android:layout_height="500dp"
-            android:src="@drawable/logohands"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/heartbroken"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

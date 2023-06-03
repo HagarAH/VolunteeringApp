@@ -39,12 +39,12 @@ public class Home extends AppCompatActivity{
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this::onBottomNavigationItemSelected);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationDrawer = findViewById(R.id.navigation_drawer);
         navigationDrawer.setNavigationItemSelectedListener(this::onDrawerNavigationItemSelected);
-
+        bottomNavigationView.setSelectedItemId(R.id.home);
         toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -58,7 +58,9 @@ public class Home extends AppCompatActivity{
                         .beginTransaction()
                         .replace(R.id.flFragment, userProfile_frag)
                         .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
+                if (drawerLayout.isDrawerOpen(navigationDrawer)) {
+                    drawerLayout.closeDrawer(navigationDrawer);
+                }
 
                 return true;
 
@@ -67,7 +69,9 @@ public class Home extends AppCompatActivity{
                         .beginTransaction()
                         .replace(R.id.flFragment, mainPage)
                         .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
+                if (drawerLayout.isDrawerOpen(navigationDrawer)) {
+                    drawerLayout.closeDrawer(navigationDrawer);
+                }
 
                 return true;
 
@@ -89,7 +93,7 @@ public class Home extends AppCompatActivity{
                         .beginTransaction()
                         .replace(R.id.flFragment, userProfile_frag)
                         .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
+
 
                 return true;
 
@@ -121,6 +125,7 @@ public class Home extends AppCompatActivity{
                 return true;
             default:
                 System.out.println("IDNOTFOUNDS");
+                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
         }
         return true;
     }
