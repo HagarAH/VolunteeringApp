@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserProfile_frag">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="121dp"
+            android:layout_height="74dp"
+           android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/ic_menu_camera" />
+
+
+
+        <TextView android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="center"
+            android:text="Upload/Change foto"
+            android:layout_marginTop="1dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal"
+            android:text="NAGİMA KANATBEK KYZY"
+            android:textSize="24sp"
+            android:textStyle="bold"
+
+
+            />
+
+
+
+            <TextView
+                android:id="@+id/additionalTextView"
+                android:layout_width="252dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_background"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="99150674124"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:background="@color/white"
+                android:text="TC kimlik" />
+
+
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="252dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_background"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="date"
+                android:padding="5sp"
+
+                android:text="15.04.2002"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/white"
+                android:text="Doğum tarihi"
+
+                />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="252dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="+905411615021"
+                android:textSize="20sp"
+
+                />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:background="@color/white"
+
+                android:text="Telefon Numaranız" />
+
+            <TextView
+                android:layout_width="252dp"
+                android:layout_height="43dp"
+                android:text="Ankara, Turkiye"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="0dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adres"
+                android:layout_marginLeft="90dp"
+                android:background="@color/white"
+
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="252dp"
+                android:layout_height="43dp"
+                android:text="06060, Ayce sokagi"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="0dp"
+                android:padding="4sp"
+                ></TextView>
+
+
+
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="205dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="122dp"
+
+            android:layout_marginTop="25dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:text="Bilgilerimi Güncelle"
+            android:textColor="@color/white"
+            android:textSize="14dp"></Button>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

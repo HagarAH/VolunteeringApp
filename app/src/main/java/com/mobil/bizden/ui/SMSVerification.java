@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -46,7 +48,7 @@ public class SMSVerification extends AppCompatActivity {
     private  PhoneAuthProvider.ForceResendingToken mresendToken;
     UserController userController= new UserController();
     FirebaseUser currentUser= userController.getCurrentUser();
-
+    private EditText[] editTexts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,16 @@ public class SMSVerification extends AppCompatActivity {
         mresendToken= intent.getParcelableExtra("resendToken");
         getPhoneNumber= intent.getStringExtra("phoneNumber");
 
+        editTexts = new EditText[]{smsArray1, smsArray2, smsArray3, smsArray4, smsArray5, smsArray6};
+
+        for (int i = 0; i < editTexts.length; i++) {
+            EditText currentEditText = editTexts[i];
+            EditText nextEditText = null;
+            if (i < editTexts.length - 1) {
+                nextEditText = editTexts[i + 1];
+            }
+            currentEditText.addTextChangedListener(new CustomTextWatcher(currentEditText, nextEditText));
+        }
         verifyBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -109,6 +121,33 @@ public class SMSVerification extends AppCompatActivity {
         });
 
 
+    }
+
+    class CustomTextWatcher implements TextWatcher {
+        private EditText currentEditText;
+        private EditText nextEditText;
+
+        public CustomTextWatcher(EditText currentEditText, EditText nextEditText) {
+            this.currentEditText = currentEditText;
+            this.nextEditText = nextEditText;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (s.length() == 1 && nextEditText != null) {
+                nextEditText.requestFocus();
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
     }
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks callbacks =
             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

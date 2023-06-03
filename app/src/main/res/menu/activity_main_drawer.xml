@@ -5,25 +5,36 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_toplanma"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_gatheringAreas"
+            android:icon="@drawable/shelter"
+            android:iconTint="@color/mavi2"
             android:title="@string/menu_toplanma"
+
 
             />
         <item
-            android:id="@+id/nav_basvuru"
+            android:id="@+id/nav_requests"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_basvuru" />
         <item
-            android:id="@+id/nav_giriskodlar"
+            android:id="@+id/nav_entryCodes"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_giriskodlar" />
-        <item
-            android:id="@+id/logout"
 
-            android:title="@string/menu_logout">
-
-        </item>
     </group>
+    <item android:title="">
+
+        <menu>
+            <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_logout_24"
+            android:title="@string/menu_logout"/>
+
+        </menu>
+
+
+    </item>
+
+
 
 </menu>

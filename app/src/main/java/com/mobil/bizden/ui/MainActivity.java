@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserLocationController;
-import com.mobil.bizden.models.Profile;
+
 
 public class MainActivity extends AppCompatActivity {
 
