@@ -19,7 +19,6 @@ import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.controllers.UserLocationController;
-import com.mobil.bizden.models.Profile;
 
 public class Login extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class Login extends AppCompatActivity {
     TextView register;
 
     private void showPasswordResetFragment() {
-        PasswordReset passwordResetFragment = new PasswordReset();
+        PasswordReset_frag passwordResetFragment = new PasswordReset_frag();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, passwordResetFragment);
         transaction.addToBackStack(null);

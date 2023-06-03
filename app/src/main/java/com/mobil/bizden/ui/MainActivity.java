@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // Start the animation delay
-        handler.postDelayed(animationDelayRunnable, 2000);
+        handler.postDelayed(animationDelayRunnable, 1000);
     }
     UserLocationController.UserLocationCheck callbackLocation = new UserLocationController.UserLocationCheck() {
         @Override
