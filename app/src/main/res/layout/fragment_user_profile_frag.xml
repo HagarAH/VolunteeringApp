@@ -55,7 +55,7 @@
             />
 
         <EditText
-            android:id="@+id/additionalTextView"
+            android:id="@+id/edittextTC"
             android:layout_width="252dp"
             android:layout_height="43dp"
             android:layout_alignParentStart="true"
@@ -65,12 +65,12 @@
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="23dp"
+            android:text=""
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_background"
             android:gravity="center_horizontal"
             android:padding="5dp"
-            android:text="99150674124"
             android:textSize="20sp" />
 
         <TextView
@@ -80,13 +80,13 @@
             android:background="@color/white"
             android:text="TC kimlik"
             android:layout_marginTop="-14dp"
-            android:layout_alignTop="@+id/additionalTextView"/>
+            android:layout_alignTop="@+id/edittextTC"/>
 
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="252dp"
             android:layout_height="43dp"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/edittextTelephone"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
@@ -115,10 +115,10 @@
             />
 
         <EditText
-            android:id="@+id/textView4"
+            android:id="@+id/edittextTelephone"
             android:layout_width="252dp"
             android:layout_height="43dp"
-            android:layout_below="@+id/additionalTextView"
+            android:layout_below="@+id/edittextTC"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
             android:background="@color/white"
-            android:layout_alignTop="@+id/textView4"
+            android:layout_alignTop="@+id/edittextTelephone"
             android:layout_marginBottom="18sp"
             android:layout_marginTop="-14dp"
             android:text="Telefon Numaranız" />
@@ -195,7 +195,7 @@
             android:layout_marginLeft="95dp"
             android:layout_marginTop="-14dp"
             android:background="@color/white"
-            android:text="Adres"></TextView>
+            android:text="Şehir"></TextView>
 
         <Button
             android:id="@+id/updateButton"
