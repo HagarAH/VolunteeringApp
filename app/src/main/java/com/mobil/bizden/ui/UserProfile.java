@@ -14,13 +14,13 @@ import com.mobil.bizden.R;
 public class UserProfile extends AppCompatActivity {
 
     private ImageView imageViewsettings;
-    private Button button;
+    private Button updatebutton;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
-        button = findViewById(R.id.updateButton);
+        updatebutton = findViewById(R.id.updateButton);
         imageViewsettings = findViewById(R.id.imageViewsettings);
         imageViewsettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +28,7 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
+        updatebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserProfile.this, updateProfile.class);

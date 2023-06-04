@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.UserProfile_frag">
+    tools:context=".ui.updatePrfl">
+
+    <!-- TODO: Update blank fragment layout -->
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -76,6 +79,7 @@
             android:layout_marginLeft="90dp"
             android:background="@color/white"
             android:text="TC kimlik"
+            android:layout_marginTop="-14dp"
             android:layout_alignTop="@+id/additionalTextView"/>
 
         <EditText
@@ -103,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
-            android:layout_marginTop="-17dp"
+            android:layout_marginTop="-14dp"
             android:background="@color/white"
             android:text="Doğum tarihi"
             android:layout_alignTop="@+id/editTextDate"
@@ -137,10 +141,10 @@
             android:background="@color/white"
             android:layout_alignTop="@+id/textView4"
             android:layout_marginBottom="18sp"
-            android:layout_marginTop="-17dp"
+            android:layout_marginTop="-14dp"
             android:text="Telefon Numaranız" />
 
-        <TextView
+        <EditText
             android:id="@+id/textViewcity"
             android:layout_width="252dp"
             android:layout_height="43dp"
@@ -155,14 +159,14 @@
             android:background="@drawable/rounded_background"
             android:gravity="center"
             android:text="Ankara, Turkiye"
-            android:textSize="20sp"></TextView>
+            android:textSize="20sp"></EditText>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textViewcity"
             android:layout_marginLeft="95dp"
-            android:layout_marginTop="-17dp"
+            android:layout_marginTop="-14dp"
             android:background="@color/white"
             android:text="Adres">
 
@@ -189,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textViewPostcode"
             android:layout_marginLeft="95dp"
-            android:layout_marginTop="-17dp"
+            android:layout_marginTop="-14dp"
             android:background="@color/white"
             android:text="Adres"></TextView>
 
@@ -206,11 +210,9 @@
             android:layout_marginEnd="70dp"
             android:layout_marginRight="12dp"
             android:background="@drawable/rounded_background"
-            android:text="Bilgilerimi Güncelle"
+            android:text=" KAYDET"
             android:textColor="@color/white"
             android:textSize="14dp"></Button>
 
     </RelativeLayout>
-
-
 </FrameLayout>

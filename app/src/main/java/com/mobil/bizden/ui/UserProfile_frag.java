@@ -3,7 +3,6 @@ package com.mobil.bizden.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -34,6 +33,15 @@ public class UserProfile_frag extends Fragment {
         return inflater.inflate(R.layout.fragment_user_profile_frag, container, false);
     }
 
+    private void openUpdateProfileFragment() {
+        updatePrfl updateProfileFragment = new updatePrfl();
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.flFragment, updateProfileFragment)
+                .addToBackStack(null)  // allows user to navigate back
+                .commit();
+    }
+
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -42,8 +50,7 @@ public class UserProfile_frag extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), updateProfile.class);
-                startActivity(intent);
+                openUpdateProfileFragment();
             }
         });
     }

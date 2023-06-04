@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31">
         <activity
-            android:name=".Request"
+            android:name=".ui.Requests"
             android:exported="false" />
         <activity
             android:name=".ui.updateProfile"
@@ -54,6 +54,14 @@
         <activity
             android:name=".ui.Login"
             android:exported="true" />
+        <activity
+            android:name=".ui.SMSVerification"
+            android:exported="true" />
+        <activity
+            android:name=".ui.deneme"
+            android:exported="true" />
+
+
     </application>
 
 </manifest>
