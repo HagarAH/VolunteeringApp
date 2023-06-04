@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.UserController;
+import com.mobil.bizden.models.GatheringArea;
 
 public class Home extends AppCompatActivity{
     DrawerLayout drawerLayout;
@@ -51,7 +52,7 @@ public class Home extends AppCompatActivity{
                         .replace(R.id.flFragment, userProfile_frag)
                         .commit();
                 if (drawerLayout.isDrawerOpen(navigationDrawer)) {
-                    navigationDrawer.setCheckedItem(0);
+                    navigationDrawer.setCheckedItem(-1);
                     drawerLayout.closeDrawer(navigationDrawer);
                 }
 
@@ -63,7 +64,7 @@ public class Home extends AppCompatActivity{
                         .replace(R.id.flFragment, mainPage)
                         .commit();
                 if (drawerLayout.isDrawerOpen(navigationDrawer)) {
-                    navigationDrawer.setCheckedItem(0);
+                    navigationDrawer.setCheckedItem(-1);
                     drawerLayout.closeDrawer(navigationDrawer);
                 }
 

@@ -1,6 +1,7 @@
 package com.mobil.bizden.ui;
 
 import android.os.Bundle;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,9 +48,25 @@ public class GatheringAreas_frag extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView);
         gatheringAreaController = new GatheringAreaController();
         UserLocationController userLocationController= new UserLocationController();
+        GatheringAreaAdapter.OnGatheringAreaClickListener listener= new GatheringAreaAdapter.OnGatheringAreaClickListener() {
+            @Override
+            public void onGatheringAreaClick(GatheringArea gatheringArea) {
+                Requests_frag requests_frag= new Requests_frag();
+                Bundle args = new Bundle();
+                args.putString("gatheringAreaAid", gatheringArea.getAid());
+                requests_frag.setArguments(args);
+                FragmentTransaction manager= getParentFragmentManager().beginTransaction();
+                manager.replace(R.id.flFragment, requests_frag);
+                manager.addToBackStack(null);
+                manager.commit();
+
+
+
+            }
+        };
         UserController userController= new UserController();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new GatheringAreaAdapter(new ArrayList<>());
+        adapter = new GatheringAreaAdapter(new ArrayList<>(),listener);
         recyclerView.setAdapter(adapter);
         GatheringAreaController.GatheringAreaCallback callback=new GatheringAreaController.GatheringAreaCallback() {
             @Override
@@ -85,11 +103,12 @@ public class GatheringAreas_frag extends Fragment {
             @Override
             public void onGatheringAreaByLocationLoaded(List<GatheringArea> gatheringAreas) {
 
-                adapter = new GatheringAreaAdapter(gatheringAreas);
+                adapter = new GatheringAreaAdapter(gatheringAreas, listener);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
         };
+
 
         UserLocationController.UserLocationCallback userLocationCallback= new UserLocationController.UserLocationCallback() {
             @Override
