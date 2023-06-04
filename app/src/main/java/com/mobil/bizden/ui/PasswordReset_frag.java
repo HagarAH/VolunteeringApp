@@ -22,7 +22,7 @@ import com.mobil.bizden.databinding.FragmentResetPassBinding;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class PasswordReset extends Fragment {
+public class PasswordReset_frag extends Fragment {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.

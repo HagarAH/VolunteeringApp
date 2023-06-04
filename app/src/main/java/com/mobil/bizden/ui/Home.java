@@ -1,14 +1,8 @@
 package com.mobil.bizden.ui;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,8 +11,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.UserController;
 
@@ -27,9 +19,9 @@ public class Home extends AppCompatActivity{
     private NavigationView navigationDrawer;
     BottomNavigationView bottomNavigationView;
     UserProfile_frag userProfile_frag= new UserProfile_frag();
-    GatheringAreas gatheringAreas= new GatheringAreas();
-    Requests userRequests= new Requests();
-    MainPage mainPage=new MainPage();
+    GatheringAreas_frag gatheringAreas= new GatheringAreas_frag();
+    Requests_frag userRequestsFrag = new Requests_frag();
+    MainPage_frag mainPage=new MainPage_frag();
     ActionBarDrawerToggle toggle;
     UserController userController= new UserController();
     @Override
@@ -59,6 +51,7 @@ public class Home extends AppCompatActivity{
                         .replace(R.id.flFragment, userProfile_frag)
                         .commit();
                 if (drawerLayout.isDrawerOpen(navigationDrawer)) {
+                    navigationDrawer.setCheckedItem(0);
                     drawerLayout.closeDrawer(navigationDrawer);
                 }
 
@@ -70,6 +63,7 @@ public class Home extends AppCompatActivity{
                         .replace(R.id.flFragment, mainPage)
                         .commit();
                 if (drawerLayout.isDrawerOpen(navigationDrawer)) {
+                    navigationDrawer.setCheckedItem(0);
                     drawerLayout.closeDrawer(navigationDrawer);
                 }
 
@@ -93,8 +87,7 @@ public class Home extends AppCompatActivity{
                         .beginTransaction()
                         .replace(R.id.flFragment, userProfile_frag)
                         .commit();
-
-
+                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
                 return true;
 
             case R.id.nav_logout:
@@ -109,7 +102,7 @@ public class Home extends AppCompatActivity{
             case R.id.nav_entryCodes:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.flFragment, userRequests)
+                        .replace(R.id.flFragment, userRequestsFrag)
                         .commit();
                 drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
 

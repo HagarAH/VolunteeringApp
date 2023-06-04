@@ -5,7 +5,15 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.mobil.bizden.models.GatheringArea;
+import com.mobil.bizden.models.UserLocation;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GatheringAreaController {
     private FirebaseFirestore firestore;
@@ -17,6 +25,10 @@ public class GatheringAreaController {
         void onGatheringAreaDeleted();
         void onGatheringAreaLoadFailed(String error);
         void onGatheringAreaLoaded(GatheringArea gatheringArea);
+
+        void onGatheringAreaByLocationLoaded(List<GatheringArea> gatheringAreas);
+
+        void onCollectionEmpty();
     }
 
     public GatheringAreaController() {
@@ -89,4 +101,41 @@ public class GatheringAreaController {
                     }
                 });
     }
+    public void getGatheringAreaByLocation(UserLocation userLocation, final GatheringAreaCallback callback) {
+        gatheringAreasRef
+                .whereEqualTo("province", userLocation.getProvince())
+                .whereEqualTo("district", userLocation.getDistrict())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<GatheringArea> gatheringAreas = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                GatheringArea gatheringArea = document.toObject(GatheringArea.class);
+                                gatheringAreas.add(gatheringArea);
+                            }
+                            // return the list of matching gathering areas
+                            callback.onGatheringAreaByLocationLoaded(gatheringAreas);
+                        } else {
+                            callback.onGatheringAreaLoadFailed(task.getException().getMessage());
+                        }
+                    }
+                });
+    }
+    public void isCollectionEmpty(final GatheringAreaCallback callback) {
+        gatheringAreasRef.limit(1).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    if (task.getResult().isEmpty()) {
+                        callback.onCollectionEmpty();
+                    }
+                } else {
+                    callback.onGatheringAreaLoadFailed(task.getException().getMessage());
+                }
+            }
+        });
+    }
+
 }

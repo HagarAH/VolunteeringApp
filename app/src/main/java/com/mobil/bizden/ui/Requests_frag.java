@@ -12,10 +12,10 @@ import com.mobil.bizden.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Requests#newInstance} factory method to
+ * Use the {@link Requests_frag#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Requests extends Fragment {
+public class Requests_frag extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Requests extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Requests() {
+    public Requests_frag() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class Requests extends Fragment {
      * @return A new instance of fragment Requests.
      */
     // TODO: Rename and change types and number of parameters
-    public static Requests newInstance(String param1, String param2) {
-        Requests fragment = new Requests();
+    public static Requests_frag newInstance(String param1, String param2) {
+        Requests_frag fragment = new Requests_frag();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
