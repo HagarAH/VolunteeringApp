@@ -6,7 +6,9 @@ public class GatheringAreaInfo {
     private double occupancyRate;
     private String information;
     private String organization;
-
+    public GatheringAreaInfo() {
+        // Default constructor required for Firebase
+    }
     public GatheringAreaInfo(String aid, String address, double occupancyRate, String information, String organization) {
         this.aid = aid;
         this.address = address;

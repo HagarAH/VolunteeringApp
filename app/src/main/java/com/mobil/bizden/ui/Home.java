@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -21,7 +22,7 @@ public class Home extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
     UserProfile_frag userProfile_frag= new UserProfile_frag();
     GatheringAreas_frag gatheringAreas= new GatheringAreas_frag();
-    Requests_frag userRequestsFrag = new Requests_frag();
+    RequestsView_frag userRequestsFrag = new RequestsView_frag();
     MainPage_frag mainPage=new MainPage_frag();
     ActionBarDrawerToggle toggle;
     UserController userController= new UserController();
@@ -50,26 +51,19 @@ public class Home extends AppCompatActivity{
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, userProfile_frag)
+                        .addToBackStack(null) // Add the transaction to the back stack
                         .commit();
-                if (drawerLayout.isDrawerOpen(navigationDrawer)) {
-                    navigationDrawer.setCheckedItem(-1);
-                    drawerLayout.closeDrawer(navigationDrawer);
-                }
-
+                drawerLayout.closeDrawer(navigationDrawer);
                 return true;
 
             case R.id.home:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, mainPage)
+                        .addToBackStack(null) // Add the transaction to the back stack
                         .commit();
-                if (drawerLayout.isDrawerOpen(navigationDrawer)) {
-                    navigationDrawer.setCheckedItem(-1);
-                    drawerLayout.closeDrawer(navigationDrawer);
-                }
-
+                drawerLayout.closeDrawer(navigationDrawer);
                 return true;
-
 
             case R.id.drawer:
                 if (drawerLayout.isDrawerOpen(navigationDrawer)) {
@@ -81,46 +75,53 @@ public class Home extends AppCompatActivity{
         }
         return false;
     }
+
     private boolean onDrawerNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_requests:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.flFragment, userProfile_frag)
+                        .replace(R.id.flFragment, userRequestsFrag)
+                        .addToBackStack(null) // Add the transaction to the back stack
                         .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
+                drawerLayout.closeDrawer(navigationDrawer);
                 return true;
 
             case R.id.nav_logout:
                 userController.logoutUser();
-                Intent intent= new Intent(Home.this,Login.class);
+                Intent intent = new Intent(Home.this, Login.class);
                 startActivity(intent);
                 finish();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
-
                 return true;
 
-            case R.id.nav_entryCodes:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.flFragment, userRequestsFrag)
-                        .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
-
-                return true;
 
             case R.id.nav_gatheringAreas:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.flFragment, gatheringAreas )
+                        .replace(R.id.flFragment, gatheringAreas)
+                        .addToBackStack(null) // Add the transaction to the back stack
                         .commit();
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
-
+                drawerLayout.closeDrawer(navigationDrawer);
                 return true;
+
             default:
-                System.out.println("IDNOTFOUNDS");
-                drawerLayout.closeDrawer(navigationDrawer);  // Close the drawer after making a selection
+                drawerLayout.closeDrawer(navigationDrawer);
+                return true;
         }
-        return true;
     }
+
+
+    public void StackPOP(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int backStackEntry = fragmentManager.getBackStackEntryCount();
+        if (backStackEntry > 1) {
+            for (int i = 0; i < backStackEntry - 1; i++) {
+                fragmentManager.popBackStackImmediate();
+
+            }
+        }
+    }
+
+
+
 }

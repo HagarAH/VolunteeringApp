@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="640dp"
-    tools:context=".ui.GatheringAreas_frag">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.RequestsView_frag">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toplanma Alanları"
+            android:text="Katılma İsteklerim"
             android:layout_margin="12dp"
             android:textSize="20sp"
             android:textStyle="bold"/>
@@ -29,7 +30,7 @@
 
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
+                    android:id="@+id/recyclerViewRequests"
                     android:scrollbars="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -42,6 +43,4 @@
 
 
     </LinearLayout>
-
-
 </FrameLayout>

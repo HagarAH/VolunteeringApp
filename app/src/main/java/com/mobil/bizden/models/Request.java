@@ -5,17 +5,21 @@ public class Request {
     private String uid;
     private String creationDate;
     private boolean acceptance;
+    private boolean rejection;
     private String volunteerStartTime;
     private String volunteerEndTime;
+    private String did;
 
     public Request() {
         // Default constructor required for Firestore
     }
 
-    public Request(String aid, String uid, String creationDate, boolean acceptance, String volunteerStartTime, String volunteerEndTime) {
+    public Request(String aid, String did,String uid, String creationDate, boolean acceptance,boolean rejection, String volunteerStartTime, String volunteerEndTime) {
+        this.did= did;
         this.aid = aid;
         this.uid = uid;
         this.creationDate = creationDate;
+        this.rejection = rejection;
         this.acceptance = acceptance;
         this.volunteerStartTime = volunteerStartTime;
         this.volunteerEndTime = volunteerEndTime;
@@ -28,7 +32,20 @@ public class Request {
     public void setAid(String aid) {
         this.aid = aid;
     }
+    public String getDid() {
+        return did;
+    }
 
+    public void setDid(String did) {
+        this.did = did;
+    }
+   public boolean isRejection() {
+        return rejection;
+    }
+
+    public void setRejection(boolean rejection) {
+        this.rejection = rejection;
+    }
     public String getUid() {
         return uid;
     }

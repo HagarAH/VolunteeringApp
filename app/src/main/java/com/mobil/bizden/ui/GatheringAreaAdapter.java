@@ -6,21 +6,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobil.bizden.R;
 import com.mobil.bizden.models.GatheringArea;
-import com.mobil.bizden.models.GatheringAreaInfo;
 
 import java.util.List;
 
 public class GatheringAreaAdapter extends RecyclerView.Adapter<GatheringAreaAdapter.ViewHolder> {
     private List<GatheringArea> gatheringAreas;
+
     public interface OnGatheringAreaClickListener {
         void onGatheringAreaClick(GatheringArea gatheringArea);
     }
+
     private OnGatheringAreaClickListener mListener;
 
 
@@ -37,11 +36,10 @@ public class GatheringAreaAdapter extends RecyclerView.Adapter<GatheringAreaAdap
         }
     }
 
-    public GatheringAreaAdapter(List<GatheringArea> gatheringAreas,OnGatheringAreaClickListener listener) {
+    public GatheringAreaAdapter(List<GatheringArea> gatheringAreas, OnGatheringAreaClickListener listener) {
         this.gatheringAreas = gatheringAreas;
         mListener = listener;
     }
-
 
 
     @Override
@@ -64,8 +62,7 @@ public class GatheringAreaAdapter extends RecyclerView.Adapter<GatheringAreaAdap
                 if (mListener != null) {
                     System.out.println("CLIKSKSKSKKSKSKSKSK");
                     mListener.onGatheringAreaClick(gatheringArea);
-                }
-                else{
+                } else {
                     System.out.println("null app");
                 }
             }

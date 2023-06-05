@@ -40,7 +40,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvNameS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
-                    android:id="@+id/tvOrg"
+                    android:id="@+id/tvOrgS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Devlet"
@@ -78,7 +78,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvLocation"
+                    android:id="@+id/tvLocationS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="1dp"
@@ -92,7 +92,7 @@
 
 
             <TextView
-                android:id="@+id/tvCapacity"
+                android:id="@+id/tvCapacityS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="50/100"
@@ -108,7 +108,7 @@
     </LinearLayout>
 
         <TextView
-            android:id="@+id/tvText"
+            android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Location"

@@ -3,7 +3,9 @@ package com.mobil.bizden.controllers;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.mobil.bizden.models.GatheringArea;
 import com.mobil.bizden.models.GatheringAreaInfo;
 
 import java.util.ArrayList;
@@ -40,14 +42,40 @@ public class GatheringAreaInfoController {
     public List<GatheringAreaInfo> getGatheringAreasList() {
             return gatheringAreasList;
         }
+public interface GetCallback{
 
-        public GatheringAreaInfo getGatheringAreaByAid(String aid) {
-            for (GatheringAreaInfo gatheringArea : gatheringAreasList) {
-                if (gatheringArea.getAid().equals(aid)) {
-                    return gatheringArea;
-                }
-            }
-            return null; // return null if no match found
+            void getSuccessful(GatheringAreaInfo gatheringAreaInfo);
+            void getFailed(String err);
+
+}
+        public void getGatheringAreaByAid(String aid,GetCallback callback ) {
+            gatheringAreasRef.document(aid)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    GatheringAreaInfo gatheringArea = document.toObject(GatheringAreaInfo.class);
+                                    callback.getSuccessful(gatheringArea);
+                                } else {
+                                    callback.getFailed("Gathering area not found");
+                                }
+                            }
+                        }
+                    });
+
+
+
+
+
+//            for (GatheringAreaInfo gatheringArea : gatheringAreasList) {
+//                if (gatheringArea.getAid().equals(aid)) {
+//                    return gatheringArea;
+//                }
+//            }
+//            return null; // return null if no match found
         }
 
         public void removeGatheringArea(String aid) {
