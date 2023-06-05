@@ -15,6 +15,7 @@ import com.mobil.bizden.models.GatheringArea;
 import com.mobil.bizden.models.GatheringAreaInfo;
 import com.mobil.bizden.models.Request;
 
+import java.util.Collections;
 import java.util.List;
 
 public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
@@ -111,7 +112,7 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHo
         });
 
         holder.tvSetTime.setText(request.getVolunteerStartTime()+" - "+request.getVolunteerEndTime());
-        holder.creadtedDate.setText(request.getCreationDate());
+        holder.creadtedDate.setText(request.getCreationDate().toDate().toString());
         if(request.isRejection()){
             holder.tvStatus.setText("Reddedildi");
         } else if(request.isAcceptance()){
@@ -133,6 +134,7 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHo
     }
     public void setRequests(List<Request> requests) {
         this.requests = requests;
+        notifyDataSetChanged();
     }
     public void removeRequestById(String requestId) {
         for (int i = 0; i < requests.size(); i++) {

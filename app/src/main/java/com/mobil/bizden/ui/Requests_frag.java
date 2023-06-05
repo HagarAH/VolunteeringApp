@@ -1,5 +1,7 @@
 package com.mobil.bizden.ui;
 
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -18,7 +20,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.google.firebase.Timestamp;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.GatheringAreaController;
 import com.mobil.bizden.controllers.GatheringAreaInfoController;
@@ -28,6 +32,8 @@ import com.mobil.bizden.models.GatheringArea;
 import com.mobil.bizden.models.GatheringAreaInfo;
 import com.mobil.bizden.models.Request;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
@@ -107,7 +113,7 @@ public class Requests_frag extends Fragment {
             public void onGatheringAreaLoaded(GatheringArea gatheringArea) {
                 gatheringAreaS=gatheringArea;
                 tvNameS.setText(gatheringArea.getName());
-                tvLocationS.setText(gatheringArea.getDistrict()+", "+gatheringArea.getProvince());
+                tvLocationS.setText(gatheringArea.getDistrict()+",  "+gatheringArea.getProvince());
                gatheringAreaInfoController.getGatheringAreaByAid(aid, new GatheringAreaInfoController.GetCallback() {
                     @Override
                     public void getSuccessful(GatheringAreaInfo gatheringAreaInfo) {
@@ -189,7 +195,7 @@ public class Requests_frag extends Fragment {
                             Random random = new Random();
                             int randomNumber = random.nextInt();
                             String did= String.valueOf(randomNumber);
-                            Request request= new Request(aid, did,userController.getCurrentUser().getUid(),String.valueOf( new Date().getDay()),false,false,arrv,dep);
+                            Request request= new Request(aid, did,userController.getCurrentUser().getUid(), Timestamp.now(),false,false,arrv,dep);
                             RequestController.RequestCallback requestCallback= new RequestController.RequestCallback() {
                                 @Override
                                 public void onCallback(Request request) {
@@ -264,10 +270,13 @@ public class Requests_frag extends Fragment {
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         hourOfDay[0] = selectedHour;
                         minute[0] = selectedMinute;
+                        if (hourOfDay[0] < 8 || (hourOfDay[0] == 8 && minute[0] < 00) || hourOfDay[0] > 22 || (hourOfDay[0] == 22 && minute[0] > 00) ) {
+                            Toast.makeText(getView().getContext(), "Lütfen bu aralık içinde bir zaman seçin: 8:00-22:00 ", Toast.LENGTH_LONG).show();
+                        } else {
 
-                        String selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay[0], minute[0]);
+                            String selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay[0], minute[0]);
 
-                        handler.onTimeSet(selectedTime);
+                        handler.onTimeSet(selectedTime);}
                     }
                 },
                 hourOfDay[0],
