@@ -7,6 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.mobil.bizden.models.GatheringArea;
@@ -52,6 +53,7 @@ public class RequestController {
     public void getRequest(String uid, final RequestCallback callback) {
         db.collection("requests")
                 .whereEqualTo("uid", uid)
+                .orderBy("creationDate", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -68,8 +70,9 @@ public class RequestController {
                             callback.onError(task.getException());
                         }
                     }
-    });
+                });
     }
+
     public void deleteRequest(String requestId, final RequestCallback callback) {
         db.collection("requests").whereEqualTo("did", requestId)
                 .get()

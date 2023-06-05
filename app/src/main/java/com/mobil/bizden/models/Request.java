@@ -1,9 +1,11 @@
 package com.mobil.bizden.models;
 
+import com.google.firebase.Timestamp;
+
 public class Request {
     private String aid;
     private String uid;
-    private String creationDate;
+    private Timestamp creationDate;
     private boolean acceptance;
     private boolean rejection;
     private String volunteerStartTime;
@@ -14,7 +16,7 @@ public class Request {
         // Default constructor required for Firestore
     }
 
-    public Request(String aid, String did,String uid, String creationDate, boolean acceptance,boolean rejection, String volunteerStartTime, String volunteerEndTime) {
+    public Request(String aid, String did,String uid, Timestamp creationDate, boolean acceptance,boolean rejection, String volunteerStartTime, String volunteerEndTime) {
         this.did= did;
         this.aid = aid;
         this.uid = uid;
@@ -54,11 +56,11 @@ public class Request {
         this.uid = uid;
     }
 
-    public String getCreationDate() {
+    public Timestamp getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
 
