@@ -48,7 +48,7 @@ import java.util.List;
         }
 
         public void getEntryCodesForUser(String userId, final EntryCodeCallback callback) {
-            entryCodesRef.whereEqualTo("uid", userId).orderBy("createdAt", Query.Direction.DESCENDING)
+            entryCodesRef.whereEqualTo("uid", userId).orderBy("createdDate", Query.Direction.DESCENDING)
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override

@@ -3,52 +3,20 @@ const functions = require("firebase-functions");
 
 admin.initializeApp();
 
-exports.autoAccept = functions.firestore.document("requests/{requestId}")
+exports.autoAccept = functions.firestore.document(`requests/{did}`)
     .onCreate(async (snapshot, context) => {
-      if (!snapshot.exists || !snapshot.has( "aid") ||
-          !snapshot.has( "did") || !snapshot.has( "uid") ||
-          !snapshot.has( "volunteerStartTime") ||
-          !snapshot.has( "volunteerEndTime")) {
-        console.error("Invalid request data");
-        return null;
-      }
-
       const request = snapshot.data();
-      const {aid, did} = request;
-
       const db = admin.firestore();
-      const gInfoDoc = await db.collection("gatheringAreasInfo").doc(aid).get();
+      console.log(request);
+      const gInfoDoc = await db.collection("gatheringAreasInfo")
+          .doc(request.aid).get();
       const gInfo = gInfoDoc.data();
-      const areaDoc = await db.collection("gatheringAreas").doc(aid).get();
+      const areaDoc = await db.collection("gatheringAreas")
+          .doc(request.aid).get();
       const areaData = areaDoc.data();
 
       // Check if gathering area has space
       if (gInfo.occupancyRate >= areaData.capacity) {
-        const docSnapshot = await db.collection("requests").doc(did).get();
-        if (docSnapshot.exists) {
-          await db.collection("requests").doc(did).update({rejection: true});
-        }
-        return null;
-      }
-
-      // Check if user"s volunteer time matches area requirements
-      const {timeRequirements} = areaData;
-      let matchesRequirements = false;
-      for (const requirement of timeRequirements) {
-        if (requirement.start === request.volunteerStartTime &&
-           requirement.end === request.volunteerEndTime &&
-           requirement.requiredVolunteers <= areaData.capacity) {
-          matchesRequirements = true;
-          break;
-        }
-      }
-
-      if (!matchesRequirements) {
-        // update request status to rejected
-        const docSnapshot = await db.collection("requests").doc(did).get();
-        if (docSnapshot.exists) {
-          await db.collection("requests").doc(did).update({status: "rejected"});
-        }
         return null;
       }
 
@@ -56,8 +24,7 @@ exports.autoAccept = functions.firestore.document("requests/{requestId}")
       console.log(`Generated code: ${code}`);
 
       const entryCodeData = {
-        id: context.params.requestId,
-        did: did,
+        did: context.params.did,
         aid: request.aid,
         uid: request.uid,
         status: true,
@@ -65,16 +32,14 @@ exports.autoAccept = functions.firestore.document("requests/{requestId}")
         validUntil: new Date(Date.now() +20*60*60*1000),
         code: code,
       };
-      const docSnapshot = await db.collection("requests").doc(did).get();
-      if (docSnapshot.exists) {
-        await db.collection("requests").doc(did).update({acceptance: true});
-      }
+
       try {
         const docRef = await db.collection("entryCodes").add(entryCodeData);
-        console.log("Document written with ID: ", docRef.id);
+        console.log("Document written with ID: ", docRef.did);
       } catch (error) {
         console.error("Error adding document: ", error);
       }
+
 
       return null;
     });

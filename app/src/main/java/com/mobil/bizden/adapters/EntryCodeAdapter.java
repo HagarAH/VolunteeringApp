@@ -54,7 +54,9 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
-
+    public void updateData(List<EntryCode> newEntryCodes) {
+        this.entryCodes = newEntryCodes;
+    }
     @Override
     public void onBindViewHolder(@androidx.annotation.NonNull ViewHolder holder, int position) {
         GatheringAreaController gatheringAreaController= new GatheringAreaController();
@@ -110,7 +112,7 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
             }
         });
 
-        holder.tvExpiry.setText(entryCode.getValidUntil());
+        holder.tvExpiry.setText(entryCode.getValidUntil().toDate().toString());
         holder.tvStatus.setTextColor(entryCode.isStatus()? ContextCompat.getColor(holder.tvStatus.getContext(), R.color.valid_green): ContextCompat.getColor(holder.tvStatus.getContext(), R.color.invalid_red) );
         holder.tvCode.setText(entryCode.getCode());
         RequestController requestController= new RequestController();

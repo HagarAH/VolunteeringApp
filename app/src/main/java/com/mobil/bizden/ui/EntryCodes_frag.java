@@ -20,72 +20,63 @@ import com.mobil.bizden.controllers.GatheringAreaController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.models.EntryCode;
 
+import java.util.ArrayList;
 import java.util.List;
-
-
 public class EntryCodes_frag extends Fragment {
     private RecyclerView recyclerView;
     private EntryCodeAdapter adapter;
     UserController userController;
     private EntryCodeController entryCodeController;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_entry_codes, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerView = view.findViewById(R.id.recyclerView);
-        userController= new UserController();
+
+        recyclerView = view.findViewById(R.id.recyclerViewCode);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        entryCodeController= new EntryCodeController();
+
+        // Initialize the adapter with an empty list
+        adapter = new EntryCodeAdapter(new ArrayList<>());
+        recyclerView.setAdapter(adapter);
+
+        userController = new UserController();
+        entryCodeController = new EntryCodeController();
+
         entryCodeController.getEntryCodesForUser(userController.getCurrentUser().getUid(), new EntryCodeController.EntryCodeCallback() {
-           @Override
-           public void onEntryCodeAdded(EntryCode entryCode) {
+            @Override
+            public void onEntryCodeAdded(EntryCode entryCode) {}
 
-           }
+            @Override
+            public void onEntryCodeAddError(Exception e) {}
 
-           @Override
-           public void onEntryCodeAddError(Exception e) {
+            @Override
+            public void onEntryCodesLoaded(List<EntryCode> entryCodes) {
+                adapter.updateData(entryCodes);
+                adapter.notifyDataSetChanged();
+            }
 
-           }
+            @Override
+            public void onEntryCodesLoadError(Exception e) {
+                // TODO: handle this case
+            }
 
-           @Override
-           public void onEntryCodesLoaded(List<EntryCode> entryCodes) {
-               adapter =  new EntryCodeAdapter(entryCodes);
-               recyclerView.setAdapter(adapter);
-               adapter.notifyDataSetChanged();
-           }
+            @Override
+            public void onEntryCodeDeleted(String entryCodeId) {}
 
-           @Override
-           public void onEntryCodesLoadError(Exception e) {
-
-           }
-
-           @Override
-           public void onEntryCodeDeleted(String entryCodeId) {
-
-           }
-
-           @Override
-           public void onEntryCodeDeleteError(Exception e) {
-
-           }
-       });
-
-
-
-
-
-
+            @Override
+            public void onEntryCodeDeleteError(Exception e) {
+                // TODO: handle this case
+            }
+        });
     }
 }
