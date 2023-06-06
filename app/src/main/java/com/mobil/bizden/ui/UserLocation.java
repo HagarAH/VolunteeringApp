@@ -15,11 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mobil.bizden.API.LocationCCD;
+import com.mobil.bizden.api.LocationCCD;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.controllers.UserLocationController;
-import com.mobil.bizden.models.User;
 
 import java.util.HashSet;
 import java.util.List;

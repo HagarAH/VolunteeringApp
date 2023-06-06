@@ -14,11 +14,13 @@
             />
         <item
             android:id="@+id/nav_requests"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/requests"
+            android:iconTint="@color/mavi2"
             android:title="@string/menu_basvuru" />
         <item
             android:id="@+id/nav_entryCodes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/lock"
+            android:iconTint="@color/mavi2"
             android:title="@string/menu_giriskodlar" />
 
     </group>

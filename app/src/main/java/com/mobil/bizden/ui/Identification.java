@@ -16,16 +16,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mobil.bizden.API.ForeignIdVerification;
-import com.mobil.bizden.API.IdVerification;
+import com.mobil.bizden.api.ForeignIdVerification;
+import com.mobil.bizden.api.IdVerification;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
 
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Identification extends AppCompatActivity {
 

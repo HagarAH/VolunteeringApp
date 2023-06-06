@@ -16,5 +16,7 @@
     <color name="mavi">#00EDFF</color>
     <color name="mavi2">#00C1A9</color>
     <color name="gray">#898E8D</color>
+    <color name="valid_green">#FF669900</color>
+    <color name="invalid_red">#FFCC0000</color>
 
 </resources>

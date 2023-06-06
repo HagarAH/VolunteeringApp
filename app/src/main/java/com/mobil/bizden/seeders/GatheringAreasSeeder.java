@@ -493,258 +493,258 @@ public class GatheringAreasSeeder {
         GatheringAreaInfo gatheringAreaInfo1 = new GatheringAreaInfo(
                 "Area1",
                 "Gezi Parkı, İstiklal Caddesi, Beyoğlu",
-                150,
+                0,
                 "Gezi Parkı, İstanbul'un Beyoğlu ilçesinde yer alan popüler bir toplanma alanıdır. Ağaçlar ve banklarla çevrili huzurlu bir ortam sunarak dinlenme ve sosyalleşme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo2 = new GatheringAreaInfo(
                 "Area2",
                 "Kuğulu Parkı, Kennedy Caddesi, Çankaya",
-                200,
+                0,
                 "Kuğulu Parkı, Ankara'nın Çankaya ilçesinde yer alan şirin bir parktır. Güzel kuğu gölü ve manzaralı yürüyüş yollarıyla ünlüdür, toplanma ve piknik yapma için huzurlu bir ortam sunar."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo3 = new GatheringAreaInfo(
                 "Area3",
                 "Düden Parkı, Lara Caddesi, Muratpaşa",
-                250,
+                0,
                 "Düden Parkı, Antalya'nın Muratpaşa ilçesinde bulunan büyüleyici bir parktır. Muhteşem şelaleleri ve yeşilliklerle dolu ortamıyla dikkat çeker, toplanma ve açık hava etkinlikleri için sakin bir ortam sunar."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo4 = new GatheringAreaInfo(
                 "Area4",
                 "Kent Parkı, Sakarya Caddesi, Odunpazarı",
-                300,
+                0,
                 "Kent Parkı, Eskişehir'in Odunpazarı ilçesinde yer alan geniş bir parktır. Oyun alanları, spor sahaları ve piknik alanları gibi çeşitli rekreasyonel imkanlar sunar, toplanma ve aile gezileri için popüler bir tercihtir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo5 = new GatheringAreaInfo(
                 "Area5",
                 "Atatürk Parkı, İzmir Caddesi, Osmangazi",
-                350,
+                0,
                 "Atatürk Parkı, Bursa'nın Osmangazi ilçesinde bulunan canlı bir parktır. Bakımlı bahçeleri, geniş meydanı ve canlı atmosferi ile dikkat çeker, sosyalleşme ve açık hava etkinliklerinin keyfini çıkarmak için ideal bir toplanma noktasıdır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo6 = new GatheringAreaInfo(
                 "Area6",
                 "Gençlik Merkezi Parkı, Gazi Bulvarı, Konak",
-                400,
+                0,
                 "Gençlik Merkezi Parkı, İzmir'in Konak ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Spor alanları, etkinlik mekanları ve dinlenme alanları ile gençlere yönelik birçok imkan sunar, toplanma ve eğlence için popüler bir seçenektir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo7 = new GatheringAreaInfo(
                 "Area7",
                 "Sakarya Gençlik Merkezi, Serdivan Caddesi, Serdivan",
-                450,
+                0,
                 "Sakarya Gençlik Merkezi, Sakarya'nın Serdivan ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Aktivite ve etkinliklere yönelik tesisleri ve gençlere yönelik hizmetleri ile bilinir, toplanma ve sosyalleşme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo8 = new GatheringAreaInfo(
                 "Area8",
                 "Mersin Gençlik Merkezi Parkı, Akdeniz Caddesi, Akdeniz",
-                500,
+                0,
                 "Mersin Gençlik Merkezi Parkı, Mersin'in Akdeniz ilçesinde yer alan bir gençlik merkezi etrafında düzenlenmiş bir parktır. Oyun alanları, yeşil alanlar ve spor alanları gibi farklı aktivite seçenekleri sunar, toplanma ve eğlence için gençler arasında popülerdir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo9 = new GatheringAreaInfo(
                 "Area9",
                 "Trabzon Gençlik Merkezi, Ortahisar Caddesi, Ortahisar",
-                550,
+                0,
                 "Trabzon Gençlik Merkezi, Trabzon'un Ortahisar ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, kurslar ve spor imkanları sunar, toplanma ve eğlence için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo10 = new GatheringAreaInfo(
                 "Area10",
                 "Kocaeli Gençlik Merkezi Parkı, İzmit Caddesi, İzmit",
-                600,
+                0,
                 "Kocaeli Gençlik Merkezi Parkı, Kocaeli'nin İzmit ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Dinlenme alanları, spor alanları ve etkinlik mekanları gibi çeşitli imkanlar sunar, toplanma ve gençler arasında popüler bir buluşma noktasıdır."
                 , getRandomOrganization());
         GatheringAreaInfo gatheringAreaInfo11 = new GatheringAreaInfo(
                 "Area11",
                 "Gülhane Parkı, Eminönü Meydanı, İstanbul",
-                300,
+                0,
                 "Gülhane Parkı, İstanbul'un Eminönü ilçesinde bulunan tarihi bir parktır. Yeşillikler, çiçekler ve tarihi atmosferiyle ünlüdür, toplanma ve keyifli zaman geçirmek için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo12 = new GatheringAreaInfo(
                 "Area12",
                 "Çankaya Gençlik Merkezi, Çankaya Caddesi, Çankaya",
-                350,
+                0,
                 "Çankaya Gençlik Merkezi, Ankara'nın Çankaya ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, spor imkanları ve eğitim programları sunar, toplanma ve gençler arasında sosyal etkileşimi teşvik eder."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo13 = new GatheringAreaInfo(
                 "Area13",
                 "Lara Gençlik Merkezi Parkı, Muratpaşa Caddesi, Muratpaşa",
-                400,
+                0,
                 "Lara Gençlik Merkezi Parkı, Antalya'nın Muratpaşa ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Spor sahaları, yeşil alanlar ve etkinlik mekanları gibi farklı aktiviteler sunar, toplanma ve eğlence için gençler arasında popülerdir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo14 = new GatheringAreaInfo(
                 "Area14",
                 "Kent Meydanı Parkı, Tepebaşı Caddesi, Tepebaşı",
-                450,
+                0,
                 "Kent Meydanı Parkı, Eskişehir'in Tepebaşı ilçesinde bulunan bir parktır. Merkezi konumu, oturma alanları ve etkinlikler için uygun bir atmosfer sunar, toplanma ve sosyalleşme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo15 = new GatheringAreaInfo(
                 "Area15",
                 "Orhangazi Gençlik Merkezi, Nilüfer Caddesi, Nilüfer",
-                500,
+                0,
                 "Orhangazi Gençlik Merkezi, Bursa'nın Nilüfer ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, spor imkanları ve sosyal hizmetler sunar, toplanma ve eğlence için gençler arasında popülerdir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo16 = new GatheringAreaInfo(
                 "Area16",
                 "Atatürk Gençlik Merkezi Parkı, Karşıyaka Caddesi, Karşıyaka",
-                550,
+                0,
                 "Atatürk Gençlik Merkezi Parkı, İzmir'in Karşıyaka ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Oyun alanları, yeşil alanlar ve etkinlik mekanları gibi farklı aktiviteler sunar, toplanma ve gençler arasında popüler bir buluşma noktasıdır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo17 = new GatheringAreaInfo(
                 "Area17",
                 "Denizli Gençlik Merkezi, Merkezefendi Caddesi, Merkezefendi",
-                600,
+                0,
                 "Denizli Gençlik Merkezi, Denizli'nin Merkezefendi ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, spor imkanları ve sosyal hizmetler sunar, toplanma ve eğlence için gençler arasında popüler bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo18 = new GatheringAreaInfo(
                 "Area18",
                 "Adana Gençlik Merkezi Parkı, Seyhan Caddesi, Seyhan",
-                650,
+                0,
                 "Adana Gençlik Merkezi Parkı, Adana'nın Seyhan ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Spor alanları, yeşil alanlar ve etkinlik mekanları gibi farklı aktiviteler sunar, toplanma ve eğlence için gençler arasında popüler bir buluşma noktasıdır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo19 = new GatheringAreaInfo(
                 "Area19",
                 "Göztepe Parkı, Kadıköy Caddesi, Kadıköy",
-                700,
+                0,
                 "Göztepe Parkı, İstanbul'un Kadıköy ilçesinde yer alan bir parktır. Geniş yeşil alanları, oturma alanları ve etkinlik mekanlarıyla bilinir, toplanma ve dinlenme için popüler bir seçenektir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo20 = new GatheringAreaInfo(
                 "Area20",
                 "Konya Gençlik Merkezi, Selçuklu Caddesi, Selçuklu",
-                750,
+                0,
                 "Konya Gençlik Merkezi, Konya'nın Selçuklu ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, spor imkanları ve sosyal hizmetler sunar, toplanma ve eğlence için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo21 = new GatheringAreaInfo(
                 "Area21",
                 "Antalya Gençlik Merkezi Parkı, Kepez Caddesi, Kepez",
-                800,
+                0,
                 "Antalya Gençlik Merkezi Parkı, Antalya'nın Kepez ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Spor alanları, yeşil alanlar ve etkinlik mekanları gibi farklı aktiviteler sunar, toplanma ve eğlence için gençler arasında popüler bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo22 = new GatheringAreaInfo(
                 "Area22",
                 "Bolu Gençlik Merkezi, Merkez Caddesi, Merkez",
-                850,
+                0,
                 "Bolu Gençlik Merkezi, Bolu'nun Merkez ilçesinde yer alan bir gençlik merkezine bağlı bir toplanma alanıdır. Gençlere yönelik etkinlikler, spor imkanları ve eğitim programları sunar, toplanma ve gençler arasında sosyal etkileşimi teşvik eder."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo23 = new GatheringAreaInfo(
                 "Area23",
                 "Yenimahalle Parkı, Yenimahalle Caddesi, Yenimahalle",
-                300,
+                0,
                 "Yenimahalle Parkı, Ankara'nın Yenimahalle ilçesinde yer alan bir parktır. Yeşillikler, oturma alanları ve etkinlikler için uygun bir atmosfer sunar, toplanma ve dinlenme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo24 = new GatheringAreaInfo(
                 "Area24",
                 "Gençlik Merkezi Parkı, Yenimahalle Caddesi, Yenimahalle",
-                350,
+                0,
                 "Gençlik Merkezi Parkı, Ankara'nın Yenimahalle ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Gençlere yönelik etkinlikler, spor imkanları ve eğlence mekanları sunar, toplanma ve sosyal etkileşimi teşvik eder."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo25 = new GatheringAreaInfo(
                 "Area25",
                 "Atatürk Ormanı, Yenimahalle Caddesi, Yenimahalle",
-                400,
+                0,
                 "Atatürk Ormanı, Ankara'nın Yenimahalle ilçesinde yer alan büyük bir ormanlık alandır. Doğal güzellikleri, yürüyüş parkurları ve dinlenme alanlarıyla ünlüdür, toplanma ve doğa ile iç içe vakit geçirmek için ideal bir seçenektir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo26 = new GatheringAreaInfo(
                 "Area26",
                 "Gazi Ormanı, Yenimahalle Caddesi, Yenimahalle",
-                450,
+                0,
                 "Gazi Ormanı, Ankara'nın Yenimahalle ilçesinde yer alan bir ormanlık alandır. Piknik alanları, yürüyüş parkurları ve doğal yaşamı keşfetmek için ideal bir seçenek sunar, toplanma ve doğa ile iç içe vakit geçirmek için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo27 = new GatheringAreaInfo(
                 "Area27",
                 "Kurtuluş Parkı, Yenimahalle Caddesi, Yenimahalle",
-                500,
+                0,
                 "Kurtuluş Parkı, Ankara'nın Yenimahalle ilçesinde yer alan bir parktır. Yeşillikler, oturma alanları ve çocuk oyun alanlarıyla bilinir, toplanma ve aileler için keyifli bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo28 = new GatheringAreaInfo(
                 "Area28",
                 "Ümitköy Parkı, Yenimahalle Caddesi, Yenimahalle",
-                550,
+                0,
                 "Ümitköy Parkı, Ankara'nın Yenimahalle ilçesinde yer alan bir parktır. Yeşillikler, oturma alanları ve spor imkanlarıyla popülerdir, toplanma ve dinlenme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo29 = new GatheringAreaInfo(
                 "Area29",
                 "Kurtuluş Parkı, Altındağ Caddesi, Altındağ",
-                400,
+                0,
                 "Kurtuluş Parkı, Ankara'nın Altındağ ilçesinde bulunan bir parktır. Doğal güzellikleri, yeşil alanları ve oturma noktalarıyla ünlüdür, toplanma ve keyifli zaman geçirmek için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo30 = new GatheringAreaInfo(
                 "Area30",
                 "Gençlik Merkezi Parkı, Altındağ Caddesi, Altındağ",
-                450,
+                0,
                 "Gençlik Merkezi Parkı, Ankara'nın Altındağ ilçesinde yer alan bir gençlik merkezine bağlı bir parktır. Gençlere yönelik etkinlikler, spor alanları ve sosyal hizmetler sunar, toplanma ve gençler arasında sosyal etkileşimi teşvik eder."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo31 = new GatheringAreaInfo(
                 "Area31",
                 "Hüseyin Gazi Parkı, Altındağ Caddesi, Altındağ",
-                500,
+                0,
                 "Hüseyin Gazi Parkı, Ankara'nın Altındağ ilçesinde yer alan bir parktır. Yeşillikler, oturma alanları ve çocuk oyun alanlarıyla ünlüdür, toplanma ve aileler için keyifli bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo32 = new GatheringAreaInfo(
                 "Area32",
                 "Sıhhiye Parkı, Altındağ Caddesi, Altındağ",
-                550,
+                0,
                 "Sıhhiye Parkı, Ankara'nın Altındağ ilçesinde yer alan bir parktır. Merkezi konumu, oturma alanları ve etkinlikler için uygun bir atmosfer sunar, toplanma ve dinlenme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo33 = new GatheringAreaInfo(
                 "Area33",
                 "Ulucanlar Cezaevi Müzesi Parkı, Altındağ Caddesi, Altındağ",
-                600,
+                0,
                 "Ulucanlar Cezaevi Müzesi Parkı, Ankara'nın Altındağ ilçesinde bulunan bir parktır. Tarihi bir cezaevi müzesi yakınında yer alır ve ziyaretçilere açık yeşil alanlar ve oturma noktaları sunar, toplanma ve tarihî bir atmosferde vakit geçirmek için ideal bir seçenektir."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo34 = new GatheringAreaInfo(
                 "Area34",
                 "Hacı Bayram Veli Camii Yanı Park, Altındağ Caddesi, Altındağ",
-                650,
+                0,
                 "Hacı Bayram Veli Camii Yanı Parkı, Ankara'nın Altındağ ilçesinde bulunan bir parktır. Hacı Bayram Veli Camii'ne yakınlığıyla bilinir ve yeşil alanları, oturma noktaları ve tarihi dokusuyla öne çıkar, toplanma ve dinlenme için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo35 = new GatheringAreaInfo(
                 "Area35",
                 "Roma Hamamı Parkı, Altındağ Caddesi, Altındağ",
-                700,
+                0,
                 "Roma Hamamı Parkı, Ankara'nın Altındağ ilçesinde yer alan bir parktır. Tarihi bir Roma hamamının yanında bulunur ve yeşillikler, oturma alanları ve etkinlikler için uygun bir atmosfer sunar, toplanma ve keyifli zaman geçirmek için ideal bir mekandır."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo36 = new GatheringAreaInfo(
                 "Area36",
                 "Gençlik Parkı, Altındağ Caddesi, Altındağ",
-                750,
+                0,
                 "Gençlik Parkı, Ankara'nın Altındağ ilçesinde yer alan bir parktır. Gençlere yönelik etkinlikler, spor alanları ve eğlence mekanları sunar, toplanma ve gençler arasında sosyal etkileşimi teşvik eder."
                 , getRandomOrganization());
 
         GatheringAreaInfo gatheringAreaInfo37 = new GatheringAreaInfo(
                 "Area37",
                 "Ankara Kalesi Parkı, Altındağ Caddesi, Altındağ",
-                800,
+                0,
                 "Ankara Kalesi Parkı, Ankara'nın Altındağ ilçesinde yer alan bir parktır. Ankara Kalesi'nin yakınında yer alır ve yeşillikler, oturma alanları ve tarihi bir atmosfer sunar, toplanma ve tarihî bir mekanda vakit geçirmek için ideal bir seçenektir."
                 , getRandomOrganization());
 

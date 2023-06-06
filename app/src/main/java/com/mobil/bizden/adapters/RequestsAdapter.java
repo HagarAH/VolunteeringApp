@@ -1,9 +1,8 @@
-package com.mobil.bizden.ui;
+package com.mobil.bizden.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +14,6 @@ import com.mobil.bizden.models.GatheringArea;
 import com.mobil.bizden.models.GatheringAreaInfo;
 import com.mobil.bizden.models.Request;
 
-import java.util.Collections;
 import java.util.List;
 
 public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {

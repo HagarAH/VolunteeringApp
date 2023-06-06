@@ -12,6 +12,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserLocationController;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
+        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
         setContentView(R.layout.activity_main);
         motionLayout = findViewById(R.id.motionLayout);
         logoImageView = findViewById(R.id.bizdenLogo);
