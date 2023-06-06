@@ -2,13 +2,15 @@ package com.mobil.bizden.models;
 
 import com.google.firebase.Timestamp;
 
+import java.sql.Time;
+
 public class EntryCode {
     private String id;
     private String aid;
 
     private String did;
     private String uid;
-    private String createdDate;
+    private Timestamp createdDate;
     private Timestamp validUntil;
     private String code;
 
@@ -18,7 +20,7 @@ public class EntryCode {
         // Default constructor required for Firestore
     }
 
-    public EntryCode( String aid, String uid, String did,String createdDate, Timestamp validUntil, String code, boolean status) {
+    public EntryCode( String aid, String uid, String did,Timestamp createdDate, Timestamp validUntil, String code, boolean status) {
         this.aid = aid;
         this.uid = uid;
         this.did=did;
@@ -28,16 +30,23 @@ public class EntryCode {
         this.status= status;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
+    }
+    public void setStatus( boolean status) {
+        this.status=status;
     }
 
     public String getAid() {
         return aid;
+    }
+    public void setAid(String aid) {
+         this.aid= aid;
+    }   public void setDid(String did) {
+         this.did= did;
+    }   public void setUid(String uid) {
+         this.uid= uid;
     }
     public String getDid(){
         return did;
@@ -47,9 +56,14 @@ public class EntryCode {
         return uid;
     }
 
-    public String getCreationDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
+
+    public void setCreatedDate(Timestamp date) {
+         this.createdDate= date;
+    }
+
 
     public Timestamp getValidUntil() {
         return validUntil;

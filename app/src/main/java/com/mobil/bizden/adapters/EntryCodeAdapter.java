@@ -49,7 +49,7 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
 
 
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.entry_code_item, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -58,7 +58,7 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
         this.entryCodes = newEntryCodes;
     }
     @Override
-    public void onBindViewHolder(@androidx.annotation.NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder( ViewHolder holder, int position) {
         GatheringAreaController gatheringAreaController= new GatheringAreaController();
         EntryCode entryCode= entryCodes.get(position);
         gatheringAreaController.getGatheringArea(entryCode.getAid(), new GatheringAreaController.GatheringAreaCallback() {
@@ -113,37 +113,16 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
         });
 
         holder.tvExpiry.setText(entryCode.getValidUntil().toDate().toString());
-        holder.tvStatus.setTextColor(entryCode.isStatus()? ContextCompat.getColor(holder.tvStatus.getContext(), R.color.valid_green): ContextCompat.getColor(holder.tvStatus.getContext(), R.color.invalid_red) );
+        holder.tvStatus.setTextColor(entryCode.getStatus()? ContextCompat.getColor(holder.tvStatus.getContext(), R.color.valid_green): ContextCompat.getColor(holder.tvStatus.getContext(), R.color.invalid_red) );
         holder.tvCode.setText(entryCode.getCode());
         RequestController requestController= new RequestController();
-        requestController.getRequestByDid(entryCode.getDid(), new RequestController.RequestCallback() {
-            @Override
-            public void onCallback(Request request) {
-                holder.tvTime.setText(request.getVolunteerStartTime()+" - "+ request.getVolunteerEndTime());
-            }
-
-            @Override
-            public void onError(Exception e) {
-                System.out.println(e);
-            }
-
-            @Override
-            public void onRequestsLoaded(List<Request> requests) {
-
-            }
-
-            @Override
-            public void onRequestDeleted(String requestId) {
-
-            }
-        });
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return entryCodes.size();
     }
 
 }

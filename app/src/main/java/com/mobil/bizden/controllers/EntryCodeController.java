@@ -33,7 +33,7 @@ import java.util.List;
         }
 
         public void addEntryCode(EntryCode entryCode, final EntryCodeCallback callback) {
-            entryCodesRef.document(entryCode.getId())
+            entryCodesRef.document(entryCode.getDid())
                     .set(entryCode, SetOptions.merge())
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

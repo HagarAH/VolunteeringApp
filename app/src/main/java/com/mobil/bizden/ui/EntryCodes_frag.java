@@ -61,7 +61,8 @@ public class EntryCodes_frag extends Fragment {
 
             @Override
             public void onEntryCodesLoaded(List<EntryCode> entryCodes) {
-                adapter.updateData(entryCodes);
+                adapter = new EntryCodeAdapter(entryCodes);
+                recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
 
@@ -75,7 +76,7 @@ public class EntryCodes_frag extends Fragment {
 
             @Override
             public void onEntryCodeDeleteError(Exception e) {
-                // TODO: handle this case
+                System.out.println(e);
             }
         });
     }

@@ -72,7 +72,7 @@ public class RequestController {
                     }
                 });
     }   public void getRequestByDid(String did, final RequestCallback callback) {
-        db.document(did)
+        db.collection("entryCodes").document(did)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
