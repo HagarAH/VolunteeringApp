@@ -154,6 +154,8 @@ public class UpdateProfile extends Fragment {
                                     locationData.put("district", adres2);
                                     locationData.put("province", adres3);
 
+
+
                                     db.collection("userLocations").document(currentUserId)
                                             .set(locationData, SetOptions.merge())
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {

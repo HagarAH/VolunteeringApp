@@ -7,22 +7,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.Home">
 
-
-    <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.Home">
+        android:layout_height="match_parent">
 
-        <!-- This FrameLayout is your main content area -->
         <FrameLayout
             android:id="@+id/flFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
 
-        <!-- Navigation drawer -->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_drawer"
             android:layout_width="240dp"
@@ -47,6 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navbar" />
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        tools:listitem="@layout/instagram_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
