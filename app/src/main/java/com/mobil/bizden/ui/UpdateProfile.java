@@ -2,6 +2,8 @@ package com.mobil.bizden.ui;
 
 import static android.content.ContentValues.TAG;
 
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,16 +18,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.models.Profile;
@@ -120,11 +125,8 @@ public class UpdateProfile extends Fragment {
 
             Button updateButton = view.findViewById(R.id.updateButton);
             updateButton.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View view) {
-                    // get the root view
-
                     EditText editextViewEpostaa = getView().findViewById(R.id.editextViewEposta);
                     String email = editextViewEpostaa.getText().toString();
 
@@ -137,79 +139,51 @@ public class UpdateProfile extends Fragment {
                     EditText EdittextProvincee = getView().findViewById(R.id.EdittextProvince);
                     String adres3 = EdittextProvincee.getText().toString();
 
-                    // ...
-
-
                     Map<String, Object> userData = new HashMap<>();
-                    userData.put("adres", adres);
                     userData.put("email", email);
-                    userData.put("adres2", adres2);
-                    userData.put("adres3", adres3);
 
                     db.collection("users").document(currentUserId)
-                            .update(userData)
+                            .set(userData, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Log.d(TAG, "DocumentSnapshot successfully updated!");
-                                    profilesDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                            if (task.isSuccessful()) {
-                                                DocumentSnapshot document = task.getResult();
-                                                if (document.exists()) {
-                                                    String email = document.getString("email");
-                                                    EditText editextViewEposta = getView().findViewById(R.id.editextViewEposta);
 
-                                                } else {
-                                                    Log.d(TAG, "No such document");
-                                                }
-                                            } else {
-                                                Log.d(TAG, "get failed with ", task.getException());
-                                            }
-                                        }
-                                    });
+                                    Map<String, Object> locationData = new HashMap<>();
+                                    locationData.put("address", adres);
+                                    locationData.put("district", adres2);
+                                    locationData.put("province", adres3);
 
                                     db.collection("userLocations").document(currentUserId)
-                                                    .update(userData)
-                                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                @Override
-                                                                public void onSuccess(Void unused) {
-                                                                    Log.d(TAG, "DocumentSnapshot successfully updated!");
-                                                                    userLocationDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                                        @Override
-                                                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                                            if (task.isSuccessful()) {
-                                                                                DocumentSnapshot document = task.getResult();
-                                                                                if (document.exists()) {
-                                                                                    String adres = document.getString("address");
-                                                                                    EditText edittextLocationn = getView().findViewById(R.id.textViewPostcode);
-                                                                                    edittextLocationn.setText(adres);
-
-                                                                                    String adres1 = document.getString("district");
-                                                                                    EditText textViewcityy = getView().findViewById(R.id.textViewcity);
-                                                                                    textViewcityy.setText(adres1);
-
-                                                                                    String adres2 = document.getString("province");
-                                                                                    EditText EdittextProvincee = getView().findViewById(R.id.EdittextProvince);
-                                                                                    EdittextProvincee.setText(adres2);
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    });
-                                                                }
-                                                            });
-
+                                            .set(locationData, SetOptions.merge())
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+                                                    Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                                    // İşlemler başarıyla tamamlandığında yapılacak işlemleri burada gerçekleştirin.
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w(TAG, "Error updating document", e);
+                                                    // Hata durumunda yapılacak işlemleri burada gerçekleştirin.
+                                                }
+                                            });
                                 }
                             })
-
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.w(TAG, "Error updating document", e);
-
+                                    // Hata durumunda yapılacak işlemleri burada gerçekleştirin.
                                 }
                             });
                 }
             });
+
+
         }}}
+
+
+
