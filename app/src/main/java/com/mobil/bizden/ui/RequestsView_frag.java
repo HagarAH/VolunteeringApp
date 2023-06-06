@@ -16,11 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.mobil.bizden.adapters.RequestsAdapter;
 import com.mobil.bizden.R;
-import com.mobil.bizden.controllers.GatheringAreaController;
 import com.mobil.bizden.controllers.RequestController;
 import com.mobil.bizden.controllers.UserController;
-import com.mobil.bizden.controllers.UserLocationController;
 import com.mobil.bizden.models.Request;
 
 import java.util.ArrayList;

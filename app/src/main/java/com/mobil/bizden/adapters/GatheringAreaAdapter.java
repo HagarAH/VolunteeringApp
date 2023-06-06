@@ -1,4 +1,4 @@
-package com.mobil.bizden.ui;
+package com.mobil.bizden.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

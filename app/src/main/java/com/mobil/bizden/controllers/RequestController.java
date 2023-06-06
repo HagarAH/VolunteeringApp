@@ -71,6 +71,22 @@ public class RequestController {
                         }
                     }
                 });
+    }   public void getRequestByDid(String did, final RequestCallback callback) {
+        db.document(did)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            Request request = document.toObject(Request.class);
+                            // return the list of matching gathering areas
+                            callback.onCallback(request);
+                        } else {
+                            callback.onError(task.getException());
+                        }
+                    }
+                });
     }
 
     public void deleteRequest(String requestId, final RequestCallback callback) {

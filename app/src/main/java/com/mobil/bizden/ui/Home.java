@@ -23,6 +23,8 @@ public class Home extends AppCompatActivity{
     UserProfile_frag userProfile_frag= new UserProfile_frag();
     GatheringAreas_frag gatheringAreas= new GatheringAreas_frag();
     RequestsView_frag userRequestsFrag = new RequestsView_frag();
+
+    EntryCodes_frag entryCodes_frag= new EntryCodes_frag();
     MainPage_frag mainPage=new MainPage_frag();
     ActionBarDrawerToggle toggle;
     UserController userController= new UserController();
@@ -33,8 +35,6 @@ public class Home extends AppCompatActivity{
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this::onBottomNavigationItemSelected);
-
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationDrawer = findViewById(R.id.navigation_drawer);
         navigationDrawer.setNavigationItemSelectedListener(this::onDrawerNavigationItemSelected);
@@ -99,6 +99,14 @@ public class Home extends AppCompatActivity{
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, gatheringAreas)
+                        .addToBackStack(null) // Add the transaction to the back stack
+                        .commit();
+                drawerLayout.closeDrawer(navigationDrawer);
+                return true;
+            case R.id.nav_entryCodes:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.flFragment, entryCodes_frag)
                         .addToBackStack(null) // Add the transaction to the back stack
                         .commit();
                 drawerLayout.closeDrawer(navigationDrawer);

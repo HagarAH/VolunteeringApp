@@ -1,12 +1,9 @@
 package com.mobil.bizden.ui;
 
 import android.os.Bundle;
-import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,13 +12,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobil.bizden.adapters.GatheringAreaAdapter;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.GatheringAreaController;
 import com.mobil.bizden.controllers.GatheringAreaInfoController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.controllers.UserLocationController;
 import com.mobil.bizden.models.GatheringArea;
-import com.mobil.bizden.models.TimeRequirement;
 import com.mobil.bizden.models.UserLocation;
 import com.mobil.bizden.seeders.GatheringAreasSeeder;
 

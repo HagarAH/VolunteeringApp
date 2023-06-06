@@ -1,4 +1,4 @@
-package com.mobil.bizden.API;
+package com.mobil.bizden.api;
 
 import android.os.AsyncTask;
 
