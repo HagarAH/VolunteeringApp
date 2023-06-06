@@ -2,7 +2,6 @@ package com.mobil.bizden.ui;
 
 import static android.content.ContentValues.TAG;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,7 +25,6 @@ import com.mobil.bizden.R;
 import com.mobil.bizden.databinding.FragmentResetPassBinding;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.w3c.dom.Document;
 
 
 public class UserProfile_frag extends Fragment {
@@ -47,7 +44,7 @@ public class UserProfile_frag extends Fragment {
     }
 
     private void openUpdateProfileFragment() {
-        updatePrfl updateProfileFragment = new updatePrfl();
+        UpdateProfile updateProfileFragment = new UpdateProfile();
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.flFragment, updateProfileFragment)

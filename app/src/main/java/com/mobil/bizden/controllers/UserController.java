@@ -9,15 +9,19 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.mobil.bizden.models.Profile;
 import com.mobil.bizden.models.User;
 import com.mobil.bizden.models.UserLocation;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class UserController {
     private FirebaseAuth mAuth;
@@ -94,6 +98,8 @@ public class UserController {
                     }
                 });
     }
+
+
 
 
     public void loginUser(String email, String password, final ProgressBar progressBar, final LoginCallback callback) {

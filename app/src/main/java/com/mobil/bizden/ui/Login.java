@@ -126,6 +126,15 @@ public class Login extends AppCompatActivity {
                 showPasswordResetFragment();
             }
         });
+        TextView toplanma = findViewById(R.id.toplanma);
+        toplanma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),toplanma.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
 

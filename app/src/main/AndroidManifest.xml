@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Bizden"
         tools:targetApi="31">
         <activity
+            android:name=".ui.toplanma"
+            android:exported="false" />
+        <activity
             android:name=".ui.SMSVerification"
             android:exported="false" />
         <activity

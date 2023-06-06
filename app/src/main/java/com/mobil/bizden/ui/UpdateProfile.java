@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.service.autofill.UserData;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,55 +21,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.play.core.integrity.v;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.UserController;
+import com.mobil.bizden.models.Profile;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link updatePrfl#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class updatePrfl extends Fragment {
+public class UpdateProfile extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public updatePrfl() {
+    public UpdateProfile() {
         // Required empty public constructor
-    }
-
-
-    // TODO: Rename and change types and number of parameters
-    public static updatePrfl newInstance(String param1, String param2) {
-        updatePrfl fragment = new updatePrfl();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -98,7 +67,7 @@ public class updatePrfl extends Fragment {
 
                             String fullName = firstName + " " + lastName;
 
-                            TextView textView = view.findViewById(R.id.textView);
+                            TextView textView = getView().findViewById(R.id.textView);
                             textView.setText(fullName);
                         } else {
                             Log.d(TAG, "No such document");
@@ -119,13 +88,13 @@ public class updatePrfl extends Fragment {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
                             String location = document.getString("address");
-                            EditText edittextLocation = view.findViewById(R.id.textViewPostcode);
+                            EditText edittextLocation = getView().findViewById(R.id.textViewPostcode);
                             edittextLocation.setText(location);
                             String district = document.getString("district");
-                            EditText textViewcity = view.findViewById(R.id.textViewcity);
+                            EditText textViewcity = getView().findViewById(R.id.textViewcity);
                             textViewcity.setText(district);
                             String province = document.getString("province");
-                            EditText EdittextProvince = view.findViewById(R.id.EdittextProvince);
+                            EditText EdittextProvince = getView().findViewById(R.id.EdittextProvince);
                             EdittextProvince.setText(province);
 
                         }
@@ -189,13 +158,8 @@ public class updatePrfl extends Fragment {
                                             if (task.isSuccessful()) {
                                                 DocumentSnapshot document = task.getResult();
                                                 if (document.exists()) {
-                                                    String firstName = document.getString("firstName");
-                                                    String lastName = document.getString("lastName");
-
-                                                    String fullName = firstName + " " + lastName;
-
-                                                    TextView textView = getView().findViewById(R.id.textView);
-                                                    textView.setText(fullName);
+                                                    String email = document.getString("email");
+                                                    EditText editextViewEposta = getView().findViewById(R.id.editextViewEposta);
 
                                                 } else {
                                                     Log.d(TAG, "No such document");
@@ -205,48 +169,40 @@ public class updatePrfl extends Fragment {
                                             }
                                         }
                                     });
-                                    userLocationDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                            if (task.isSuccessful()) {
-                                                DocumentSnapshot document = task.getResult();
-                                                if (document.exists()) {
-                                                    String location = document.getString("address");
-                                                    EditText edittextLocationn = getView().findViewById(R.id.textViewPostcode);
-                                                    edittextLocationn.setText(location);
 
-                                                    String district = document.getString("district");
-                                                    EditText textViewcityy = getView().findViewById(R.id.textViewcity);
-                                                    textViewcityy.setText(district);
+                                    db.collection("userLocations").document(currentUserId)
+                                                    .update(userData)
+                                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                @Override
+                                                                public void onSuccess(Void unused) {
+                                                                    Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                                                    userLocationDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                                        @Override
+                                                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                            if (task.isSuccessful()) {
+                                                                                DocumentSnapshot document = task.getResult();
+                                                                                if (document.exists()) {
+                                                                                    String adres = document.getString("address");
+                                                                                    EditText edittextLocationn = getView().findViewById(R.id.textViewPostcode);
+                                                                                    edittextLocationn.setText(adres);
 
-                                                    String province = document.getString("province");
-                                                    EditText EdittextProvincee = getView().findViewById(R.id.EdittextProvince);
-                                                    EdittextProvincee.setText(province);
-                                                }
-                                            }
-                                        }
-                                    });
+                                                                                    String adres1 = document.getString("district");
+                                                                                    EditText textViewcityy = getView().findViewById(R.id.textViewcity);
+                                                                                    textViewcityy.setText(adres1);
 
-                                    String uid = currentUser.getUid();
-                                    DocumentReference emailRef = db.collection("users").document(uid);
-
-                                    emailRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                            if (task.isSuccessful()) {
-                                                DocumentSnapshot document = task.getResult();
-                                                if (document.exists()) {
-                                                    String email = document.getString("email");
-                                                    EditText editextViewEpostaa = getView().findViewById(R.id.editextViewEposta);
-                                                    editextViewEpostaa.setText(email);
-                                                }
-                                            }
-                                        }
-                                    });
-
+                                                                                    String adres2 = document.getString("province");
+                                                                                    EditText EdittextProvincee = getView().findViewById(R.id.EdittextProvince);
+                                                                                    EdittextProvincee.setText(adres2);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    });
+                                                                }
+                                                            });
 
                                 }
                             })
+
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
