@@ -1,9 +1,12 @@
 package com.mobil.bizden.controllers;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -67,19 +70,22 @@ import java.util.List;
                     });
         }
 
-        public void deleteEntryCode(String entryCodeId, final EntryCodeCallback callback) {
-            entryCodesRef.document(entryCodeId)
-                    .delete()
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                callback.onEntryCodeDeleted(entryCodeId);
-                            } else {
-                                callback.onEntryCodeDeleteError(task.getException());
-                            }
-                        }
-                    });
+        public void deleteEntryCode(String requestId) {
+            db.collection("entryCodes").whereEqualTo("did",requestId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    QuerySnapshot queryDocumentSnapshots = task.getResult();
+                    if (task.isSuccessful()) {
+                        queryDocumentSnapshots.getDocuments().get(0).getReference().delete();
+                        System.out.println("entrycode deleted");
+
+                    } else {
+                        System.out.println("Could not find entrycode");
+                    }
+                }
+
+            });
+
         }
 
 

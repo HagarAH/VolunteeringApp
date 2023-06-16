@@ -24,7 +24,8 @@ exports.autoAccept = functions.firestore.document(`requests/{did}`)
       console.log(`Generated code: ${code}`);
 
       const entryCodeData = {
-        did: context.params.did,
+        id: context.params.did,
+        did: request.did,
         aid: request.aid,
         uid: request.uid,
         status: true,

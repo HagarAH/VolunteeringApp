@@ -2,6 +2,10 @@ package com.mobil.bizden.controllers;
 
 import android.app.Activity;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -11,6 +15,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.mobil.bizden.models.GatheringArea;
 import com.mobil.bizden.models.Profile;
 
 import java.util.concurrent.TimeUnit;
@@ -21,11 +26,29 @@ public class ProfileController {
     private FirebaseUser mCurrentUser;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private String mVerificationId;
-
+    FirebaseFirestore db;
     public ProfileController() {
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
+         db = FirebaseFirestore.getInstance();
+
+    }
+
+    public void getProfile( ProfileCheckCallback callback) {
+
+      db.collection("profiles").document(mCurrentUser.getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                  @Override
+                  public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                      if (task.isSuccessful()){
+                          Profile profile;
+                          profile= task.getResult().toObject(Profile.class);
+                          callback.onGetProfile(profile);
+                      }
+                  }
+              });
+
     }
 
     public void updateProfile(String fname, String lname, String idno, String dateOfBirth, ProfileUpdateCallback callback) {
@@ -114,6 +137,7 @@ public class ProfileController {
         void onProfileExists(Profile profile);
 
         void onProfileEmpty();
+        void onGetProfile(Profile profile);
 
         void onProfileCheckError(Exception e);
     }

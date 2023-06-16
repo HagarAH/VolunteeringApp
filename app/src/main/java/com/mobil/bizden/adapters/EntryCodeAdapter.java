@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.type.DateTime;
 import com.mobil.bizden.R;
 import com.mobil.bizden.controllers.GatheringAreaController;
 import com.mobil.bizden.controllers.GatheringAreaInfoController;
@@ -21,11 +22,15 @@ import com.mobil.bizden.models.Request;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.ViewHolder> {
 
-
+    DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
     private List<EntryCode> entryCodes;
     public EntryCodeAdapter(List<EntryCode> entryCodes) {
         this.entryCodes = entryCodes;
@@ -112,8 +117,8 @@ public class EntryCodeAdapter extends RecyclerView.Adapter<EntryCodeAdapter.View
             }
         });
 
-        holder.tvExpiry.setText(entryCode.getValidUntil().toDate().toString());
-        holder.tvStatus.setTextColor(entryCode.getStatus()? ContextCompat.getColor(holder.tvStatus.getContext(), R.color.valid_green): ContextCompat.getColor(holder.tvStatus.getContext(), R.color.invalid_red) );
+        holder.tvExpiry.setText(inputFormat.format(entryCode.getValidUntil().toDate()));
+        holder.tvStatus.setTextColor( new Date().before(entryCode.getValidUntil().toDate()) ? ContextCompat.getColor(holder.tvStatus.getContext(), R.color.valid_green): ContextCompat.getColor(holder.tvStatus.getContext(), R.color.invalid_red) );
         holder.tvCode.setText(entryCode.getCode());
         RequestController requestController= new RequestController();
 

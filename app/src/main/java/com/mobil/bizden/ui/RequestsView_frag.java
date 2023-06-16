@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.mobil.bizden.adapters.RequestsAdapter;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.EntryCodeController;
 import com.mobil.bizden.controllers.RequestController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.models.Request;
@@ -80,10 +81,12 @@ public class RequestsView_frag extends Fragment {
 
                             @Override
                             public void onRequestDeleted(String requestId) {
-                                Toast.makeText(view.getContext(), "İstek silindi", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(view.getContext(), "İstek ve kodu silindi", Toast.LENGTH_SHORT).show();
                                 adapter.removeRequestById(requestId);
                                 // Notify the adapter of the data change
                                 adapter.notifyDataSetChanged();
+                                EntryCodeController codeController= new EntryCodeController();
+                                codeController.deleteEntryCode(requestId);
                             }
                         });
                     }
@@ -127,6 +130,8 @@ public class RequestsView_frag extends Fragment {
 
              @Override
              public void onRequestDeleted(String requestId) {
+                 EntryCodeController codeController= new EntryCodeController();
+                 codeController.deleteEntryCode(requestId);
 
              }
          });

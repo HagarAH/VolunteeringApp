@@ -3,6 +3,8 @@ package com.mobil.bizden.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -13,8 +15,10 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.mobil.bizden.R;
+import com.mobil.bizden.controllers.ProfileController;
 import com.mobil.bizden.controllers.UserController;
 import com.mobil.bizden.models.GatheringArea;
+import com.mobil.bizden.models.Profile;
 
 public class Home extends AppCompatActivity{
     DrawerLayout drawerLayout;
@@ -28,17 +32,45 @@ public class Home extends AppCompatActivity{
     MainPage_frag mainPage=new MainPage_frag();
     ActionBarDrawerToggle toggle;
     UserController userController= new UserController();
+    TextView name, email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this::onBottomNavigationItemSelected);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationDrawer = findViewById(R.id.navigation_drawer);
         navigationDrawer.setNavigationItemSelectedListener(this::onDrawerNavigationItemSelected);
         bottomNavigationView.setSelectedItemId(R.id.home);
+        View header=navigationDrawer.getHeaderView(0);
+//        name=navigationDrawer.findViewById(R.id.nav_header_name);
+        name= header.findViewById(R.id.nav_header_name);
+        email=header.findViewById(R.id.nav_header_email);
+        email.setText(new UserController().getCurrentUser().getEmail());
+        new ProfileController().getProfile(new ProfileController.ProfileCheckCallback() {
+            @Override
+            public void onProfileExists(Profile profile) {
+
+            }
+
+            @Override
+            public void onProfileEmpty() {
+
+            }
+
+            @Override
+            public void onGetProfile(Profile profile) {
+                name.setText(profile.getFirstName());
+            }
+
+            @Override
+            public void onProfileCheckError(Exception e) {
+
+            }
+        });
+
+
         toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);

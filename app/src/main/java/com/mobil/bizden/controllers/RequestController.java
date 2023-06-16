@@ -90,6 +90,7 @@ public class RequestController {
     }
 
     public void deleteRequest(String requestId, final RequestCallback callback) {
+
         db.collection("requests").whereEqualTo("did", requestId)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
