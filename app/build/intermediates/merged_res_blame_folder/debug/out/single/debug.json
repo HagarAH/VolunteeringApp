@@ -1,0 +1,302 @@
+[
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_blog_volunteers.jpeg.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\blog_volunteers.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_toplanma.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_toplanma.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_lock.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\lock.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_baseline_logout_24.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\baseline_logout_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_requests.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_requests.xml"
+    },
+    {
+        "merged": "com.mobil.bizden.app-merged_res-55:/layout_activity_login.xml.flat",
+        "source": "com.mobil.bizden.app-main-57:/layout/activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_baseline_warehouse_24.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\baseline_warehouse_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_phone_verify.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_phone_verify.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_side_nav_bar.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_homeicon.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\homeicon.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_instagram_item.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\instagram_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_volent.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\volent.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_settings.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\settings.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_main_page.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_main_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_bg_splash.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\bg_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-anydpi-v33\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_item_gathering_area.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\item_gathering_area.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\xml_activity_main_scene.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\xml\\activity_main_scene.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_reset_pass.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_reset_pass.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_ic_menu_slideshow.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_user_location.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_user_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_entry_code_item.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\entry_code_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\baseline_email_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_rounded_corners_3.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\rounded_corners_3.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_locationicon.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\locationicon.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_identification.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_identification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\menu_navbar.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\menu\\navbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\menu_activity_main_drawer.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\menu\\activity_main_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_requests.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\requests.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_update_prfl.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_update_prfl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_clock.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\clock.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\ic_menu_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_gathering_areas.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_gathering_areas.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_heartmended.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\heartmended.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_user_profile_frag.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_user_profile_frag.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_item_requests_list.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\item_requests_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_warning.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\warning.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_baseline_password_24.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\baseline_password_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_first_login.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_first_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_shelter.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\shelter.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_baseline_calendar_month_24.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\baseline_calendar_month_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_smsverification.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_smsverification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_navdots.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\navdots.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_ic_menu_camera.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\ic_menu_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_kod.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_kod.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_bizdenlogo.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\bizdenlogo.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_logohands.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\logohands.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_heartbroken.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\heartbroken.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_nav_bar.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_idicon.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\idicon.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_rounded_background.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\rounded_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "com.mobil.bizden.app-merged_res-55:/layout_activity_identification.xml.flat",
+        "source": "com.mobil.bizden.app-main-57:/layout/activity_identification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_entry_codes.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_entry_codes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-merged_res-55:\\layout_fragment_requests_view_frag.xml.flat",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_requests_view_frag.xml"
+    }
+]

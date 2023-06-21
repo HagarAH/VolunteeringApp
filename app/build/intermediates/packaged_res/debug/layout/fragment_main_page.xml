@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MainPage_frag">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- User information -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@id/postImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/blog_volunteers" /> <!-- Default image. Update this as necessary. -->
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barınaklar Federasyonu"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Post image -->
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/volent" /> <!-- Default image. Update this as necessary. -->
+
+        <!-- Interaction buttons (like, comment, share) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp">
+
+            <ImageButton
+                android:id="@+id/likeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" /> <!-- Change to a suitable drawable -->
+
+            <ImageButton
+                android:id="@+id/commentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" /> <!-- Change to a suitable drawable -->
+
+            <ImageButton
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" /> <!-- Change to a suitable drawable -->
+
+        </LinearLayout>
+
+        <!-- Caption -->
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:text="  Volunteerism, her toplumun temel taşlarından biridir ve  bu durumun mükemmel bir örneğidir. Kendini gönüllü olarak topluma adayan XYZ, hem yerel hem de global çapta önemli bir fark yaratıyor. Onun fedakar çabaları, topluluğuna değer katan projelerin hayata geçmesine yardımcı oluyor." />
+
+        <!-- Comment section (You can use RecyclerView or LinearLayout here) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/commentSection">
+
+            <!-- Dynamically add comments here -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

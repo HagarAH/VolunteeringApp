@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FirstLogin">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/logoutBtnFL"
+            android:layout_width="110dp"
+            android:layout_height="55dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="25sp"
+            android:text="vazgeç"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/primary_100" />
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:src="@drawable/fui_ic_check_circle_black_128dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:text="HOŞ GELDİNİZ!"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-medium"
+            android:text=" Girişiniz başarılı ama başlamadan önce, uygulamaya devam etmek için bazı gerekli bilgileri sağlamanız gerekir."
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/firstLoginBtn"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_background"
+            android:text="devam"
+            android:textSize="22sp"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

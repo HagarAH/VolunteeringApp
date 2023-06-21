@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.Bizden.FullscreenContainer"
+    tools:context=".ui.PasswordReset_frag">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <LinearLayout
+        android:id="@+id/ResetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullscreen_content"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:gravity="center"
+            android:layout_margin="40dp"
+            android:keepScreenOn="true"
+            android:text="Şifre Sıfırlama "
+            android:textColor="@color/mavi2"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/resetPassText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="E-postanıza instructions göndermek için buraya yazınız:"
+            android:textColor="@color/mavi2"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/EditTextResetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-posta"
+            android:padding="20dp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnResetPassword"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Şifre Sıfırla"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_background"/>
+
+        <Button
+            android:id="@+id/btnResetPasswordExit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Geri"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_background"/>
+
+
+    </LinearLayout>
+
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+
+</FrameLayout>

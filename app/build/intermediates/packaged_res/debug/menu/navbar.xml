@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/drawer"
+        android:title="Daha fazla"
+        android:icon="@drawable/navdots"/>
+    <item
+        android:id="@+id/home"
+        android:title="Anasayfa"
+        android:icon="@drawable/homeicon"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profil"
+        android:icon="@drawable/idicon"/>
+
+
+</menu>

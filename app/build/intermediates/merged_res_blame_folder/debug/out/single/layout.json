@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_requests.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_requests.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_entry_codes.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_entry_codes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_smsverification.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_smsverification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_requests_view_frag.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_requests_view_frag.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\item_gathering_area.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\item_gathering_area.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_gathering_areas.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_gathering_areas.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_kod.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_kod.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_home.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_user_location.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_user_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_reset_pass.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_reset_pass.xml"
+    },
+    {
+        "merged": "com.mobil.bizden.app-mergeDebugResources-54:/layout/activity_identification.xml",
+        "source": "com.mobil.bizden.app-main-57:/layout/activity_identification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\entry_code_item.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\entry_code_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\nav_bar.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_phone_verify.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_phone_verify.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\item_requests_list.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\item_requests_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_identification.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_identification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_user_profile_frag.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_user_profile_frag.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_first_login.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_first_login.xml"
+    },
+    {
+        "merged": "com.mobil.bizden.app-mergeDebugResources-54:/layout/activity_login.xml",
+        "source": "com.mobil.bizden.app-main-57:/layout/activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\instagram_item.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\instagram_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_update_prfl.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_update_prfl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\activity_toplanma.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\activity_toplanma.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-mergeDebugResources-54:\\layout\\fragment_main_page.xml",
+        "source": "C:\\Users\\Hagar Hamad\\.gradle\\daemon\\7.5\\com.mobil.bizden.app-main-57:\\layout\\fragment_main_page.xml"
+    }
+]

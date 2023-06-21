@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UpdateProfile">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="121dp"
+            android:layout_height="74dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="142dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="142dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_menu_camera" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/imageView"
+            android:layout_gravity="center"
+            android:layout_marginStart="-8dp"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginTop="80dp"
+            android:text="Upload/Change foto" />
+
+        <EditText
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal"
+            android:text="NAGİMA KANATBEK KYZY"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/text"
+
+
+            />
+
+        <EditText
+            android:id="@+id/editextViewEposta"
+            android:layout_width="252dp"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:hint="Email"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:background="@color/white"
+            android:text="Eposta"
+            android:layout_marginTop="-14dp"
+            android:layout_alignTop="@+id/editextViewEposta"/>
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/textViewcity"
+            android:layout_width="252dp"
+            android:layout_height="43dp"
+            android:layout_below="@+id/textViewPostcode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="409dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:hint="District"
+            android:textSize="20sp"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textViewcity"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-14dp"
+            android:background="@color/white"
+            android:text="Adres">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/EdittextProvince"
+            android:layout_width="253dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_alignTop="@id/textViewcity"
+            android:hint="Province"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            >
+
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/EdittextProvince"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-14dp"
+            android:background="@color/white"
+            android:text="Adres">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textViewcity"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-14dp"
+            android:background="@color/white"
+            android:text="Adres">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/textViewPostcode"
+            android:layout_width="252dp"
+            android:layout_height="43dp"
+            android:layout_below="@+id/editextViewEposta"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:padding="4sp"
+            android:hint="Address"
+            android:textSize="20sp"></EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textViewPostcode"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-14dp"
+            android:background="@color/white"
+            android:text="Adres"></TextView>
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="225dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/textViewPostcode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/rounded_background"
+            android:text=" KAYDET "
+            android:textColor="@color/white"
+            android:textSize="14dp"></Button>
+
+    </RelativeLayout>
+</FrameLayout>
